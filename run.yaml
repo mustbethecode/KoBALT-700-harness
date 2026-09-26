@@ -2,7 +2,7 @@ backend:
   family: api # api | transformers | vllm
   model: motif/motif-3
   api_provider: openai # openai | anthropic (only when family == api)
-  endpoint: https://api-cbt.morphfactory.io/v1 # optional, for OpenAI-compatible endpoints
+  endpoint: https://llm.onerouter.pro/v1 # optional, for OpenAI-compatible endpoints
   engine_opts:
     extra_body:
 
