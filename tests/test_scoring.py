@@ -87,7 +87,59 @@ def test_empty_records():
         "by_class": {},
         "by_subclass": {},
         "by_level": {},
+        "usage": None,
+        "cost_per_correct": None,
     }
+
+
+def test_usage_aggregates_tokens_and_cost_per_correct():
+    records = [
+        {
+            "correct": True, "class": "Syntax", "subclass": "s1", "level": 1,
+            "usage": {
+                "prompt_tokens": 100, "completion_tokens": 200,
+                "reasoning_tokens": 50, "cost": 0.25, "cost_source": "provider",
+            },
+        },
+        {
+            "correct": False, "class": "Syntax", "subclass": "s1", "level": 1,
+            "usage": {
+                "prompt_tokens": 300, "completion_tokens": 400,
+                "cost": 0.75, "cost_source": "provider",
+            },
+        },
+    ]
+    m = compute_metrics(records)
+    assert m["usage"] == {
+        "records_with_usage": 2,
+        "prompt_tokens": 400,
+        "completion_tokens": 600,
+        "reasoning_tokens": 50,
+        "total_cost": 1.0,
+        "cost_source": "provider",
+    }
+    assert m["cost_per_correct"] == pytest.approx(1.0)  # 1 correct item
+
+
+def test_usage_ignores_records_without_usage_and_null_cost():
+    records = [
+        {"correct": True, "class": "Syntax", "subclass": "s1", "level": 1, "usage": None},
+        {
+            "correct": False, "class": "Syntax", "subclass": "s1", "level": 1,
+            "usage": {"prompt_tokens": 10, "completion_tokens": 5},
+        },
+        {"correct": True, "class": "Syntax", "subclass": "s1", "level": 1},
+    ]
+    m = compute_metrics(records)
+    assert m["usage"] == {
+        "records_with_usage": 1,
+        "prompt_tokens": 10,
+        "completion_tokens": 5,
+        "reasoning_tokens": None,
+        "total_cost": None,
+        "cost_source": None,
+    }
+    assert m["cost_per_correct"] is None
 
 
 def _write_run_dir(run_dir, records, with_snapshot=True):

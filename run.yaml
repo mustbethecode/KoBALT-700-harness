@@ -1,11 +1,12 @@
 backend:
   family: api # api | transformers | vllm
-  model: motif/motif-3
+  model: anthropic/claude-sonnet-5.5
   api_provider: openai # openai | anthropic (only when family == api)
-  endpoint: https://llm.onerouter.pro/v1 # optional, for OpenAI-compatible endpoints
+  endpoint: https://openrouter.ai/api/v1 # optional, for OpenAI-compatible endpoints
   engine_opts:
     extra_body:
-
+      provider:
+        only: [anthropic]
       # chat_template_kwargs:
       #   enable_thinking: false
   max_retries: 3

@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from kobalt_eval.backends.base import Backend
+from kobalt_eval.backends.base import Backend, GenerationResult
 
 VALID_CLASSES = [
     "Syntax",
@@ -33,34 +33,41 @@ PREDICTION_FIELDS = {
     "subclass",
     "level",
     "latency_ms",
+    "usage",
 }
 
 
 class StubBackend(Backend):
     """Canned-output stub backend.
 
-    Returns ``outputs`` in call order (one string per messages list);
-    once exhausted, repeats the last output. Counts calls so resume
-    tests can assert only-missing-items were inferred.
+    Returns ``outputs`` in call order (one GenerationResult per messages
+    list), once exhausted repeats the last output, and pairs each call with
+    the matching entry from ``usages`` (None beyond the list). Counts calls
+    so resume tests can assert only-missing-items were inferred.
     """
 
-    def __init__(self, outputs: list[str]) -> None:
+    def __init__(
+        self,
+        outputs: list[str],
+        usages: list[dict[str, Any] | None] | None = None,
+    ) -> None:
         if not outputs:
             raise ValueError("StubBackend needs at least one canned output")
         self.outputs = list(outputs)
+        self.usages = list(usages) if usages else []
         self.calls = 0
 
     def generate(
         self,
         messages_list: list[list[dict]],
         config: Any = None,
-    ) -> list[str]:
-        out: list[str] = []
+    ) -> list[GenerationResult]:
+        out: list[GenerationResult] = []
         for _ in messages_list:
-            if self.calls < len(self.outputs):
-                out.append(self.outputs[self.calls])
-            else:
-                out.append(self.outputs[-1])
+            idx = self.calls
+            text = self.outputs[idx] if idx < len(self.outputs) else self.outputs[-1]
+            usage = self.usages[idx] if idx < len(self.usages) else None
+            out.append(GenerationResult(text=text, usage=usage))
             self.calls += 1
         return out
 

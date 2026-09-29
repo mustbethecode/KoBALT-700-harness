@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
-from kobalt_eval.backends.base import Backend
+from kobalt_eval.backends.base import Backend, GenerationResult, build_usage
 
 if TYPE_CHECKING:
     from kobalt_eval.config import RunConfig
@@ -64,7 +64,7 @@ class VLLMBackend(Backend):
         # Fallback: simple role-prefixed concatenation.
         return "\n".join(f"{m.get('role', '')}: {m.get('content', '')}" for m in messages)
 
-    def generate(self, messages_list: list[list[dict]], config: "RunConfig") -> list[str]:
+    def generate(self, messages_list: list[list[dict]], config: "RunConfig") -> list[GenerationResult]:
         self._ensure_loaded()
         try:
             from vllm import SamplingParams  # lazy
@@ -81,10 +81,29 @@ class VLLMBackend(Backend):
         )
         prompts = [self._render(m) for m in messages_list]
         outputs = self._llm.generate(prompts, params)
-        texts: list[str] = []
+        results: list[GenerationResult] = []
         for out in outputs:
             try:
-                texts.append(out.outputs[0].text)
+                text = out.outputs[0].text
             except (AttributeError, IndexError):
-                texts.append("")
-        return texts
+                text = ""
+            results.append(GenerationResult(text=text, usage=_token_usage(out)))
+        return results
+
+
+def _token_usage(out: Any) -> dict[str, Any] | None:
+    """Prompt/completion token counts from one vLLM RequestOutput.
+
+    Local engines have no dollar cost, so no cost key is emitted. Counting
+    is defensive: a vLLM version that omits token ids degrades to unknown.
+    """
+    prompt_ids = getattr(out, "prompt_token_ids", None)
+    completion_ids = None
+    try:
+        completion_ids = out.outputs[0].token_ids
+    except (AttributeError, IndexError):
+        completion_ids = None
+    return build_usage(
+        prompt_tokens=len(prompt_ids) if prompt_ids is not None else None,
+        completion_tokens=len(completion_ids) if completion_ids is not None else None,
+    )

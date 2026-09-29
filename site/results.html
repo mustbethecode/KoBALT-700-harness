@@ -48,6 +48,19 @@
       <div id="tier-disabled-wrap"></div>
     </section>
 
+    <section id="cost" class="defer" aria-labelledby="cost-h">
+      <h2 id="cost-h">Cost</h2>
+      <p>Provider-default runs with a known cost. Cost is a property of the run configuration and endpoint, not intrinsic to the model: provider routing, quantization, repeated retries, and the reasoning budget all change it. <strong>Measured</strong> cost is summed from per-request usage reported by the provider; <strong>reported</strong> cost is a dashboard total for runs made before usage capture, and covers only the completed run — retries and abandoned partial runs are not included.</p>
+      <figure class="chart-block">
+        <div id="cost-chart" class="chart" role="img" aria-label="Scatter chart of accuracy against run cost in US dollars (log scale) for provider-default runs. Exact values are in the table below."></div>
+        <figcaption class="caption">Horizontal axis: run cost, USD, log scale. Vertical bars: 95% Wilson intervals. Filled markers are measured cost; hollow markers are reported.</figcaption>
+      </figure>
+      <details class="disclosure">
+        <summary>Exact cost values</summary>
+        <div class="table-scroll-host" id="cost-table-wrap"></div>
+      </details>
+    </section>
+
     <section id="domains" class="defer" aria-labelledby="domains-h">
       <h2 id="domains-h">By domain</h2>
       <p>Five linguistic domains. Small domains are noisier (Morphology: 42 items; Syntax: 300). Charts show provider-default runs; tables include reasoning-limited runs, marked.</p>

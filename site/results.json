@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T20:49:54Z",
+  "generated_at": "2026-09-28T23:11:04Z",
   "generator": "site/build.py",
   "item_count": 700,
   "dataset": {
@@ -136,6 +136,12 @@
         "rate": 0.01
       },
       "empty_raw_output": 0,
+      "usage": null,
+      "cost": {
+        "usd": 14.5,
+        "per_correct": 0.022906793048973143,
+        "source": "reported"
+      },
       "latency_ms": {
         "n": 700,
         "median": 9107.0,
@@ -236,6 +242,12 @@
         "rate": 0.0
       },
       "empty_raw_output": 0,
+      "usage": null,
+      "cost": {
+        "usd": 3.89,
+        "per_correct": 0.006164817749603804,
+        "source": "reported"
+      },
       "latency_ms": {
         "n": 700,
         "median": 3183.0,
@@ -336,6 +348,12 @@
         "rate": 0.007143
       },
       "empty_raw_output": 5,
+      "usage": null,
+      "cost": {
+        "usd": 1.81,
+        "per_correct": 0.0030016583747927033,
+        "source": "reported"
+      },
       "latency_ms": {
         "n": 700,
         "median": 3204.5,
@@ -430,6 +448,8 @@
         "rate": 0.041429
       },
       "empty_raw_output": 29,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
         "median": 4903.5,
@@ -438,6 +458,119 @@
       "evidence": {
         "snapshot": "site/data/runs/run-20260919-023453-gpt-5.6-sol-floor/config.snapshot.yaml",
         "results": "site/data/runs/run-20260919-023453-gpt-5.6-sol-floor/results.json"
+      }
+    },
+    {
+      "slug": "run-20260928-201103-claude-sonnet-5.5",
+      "path": "runs/run-20260928-201103-claude-sonnet-5.5",
+      "model": "anthropic/claude-sonnet-5.5",
+      "label": "claude-sonnet-5.5",
+      "timestamp": "2026-09-28T20:11:03Z",
+      "backend": "api",
+      "provider": "openai",
+      "endpoint": "https://openrouter.ai/api/v1",
+      "reasoning_mode": "provider-default",
+      "reasoning_effort": null,
+      "reasoning_source": null,
+      "category": "primary",
+      "engine_extra_body": {
+        "provider": {
+          "only": [
+            "anthropic"
+          ]
+        }
+      },
+      "max_new_tokens": 2048,
+      "prompt_template_hash": "3941207196edd4239a011e10649c790ed79a747490238330c32b2a2ed35383e1",
+      "dataset": {
+        "name": "snunlp/KoBALT-700",
+        "revision": "0.0.0"
+      },
+      "total": 700,
+      "correct": 569,
+      "accuracy": 0.8128571428571428,
+      "wilson_95": {
+        "lo": 0.782284,
+        "hi": 0.840015
+      },
+      "by_domain": [
+        {
+          "name": "Morphology",
+          "n": 42,
+          "correct": 35,
+          "accuracy": 0.8333333333333334
+        },
+        {
+          "name": "Phonetics/Phonology",
+          "n": 62,
+          "correct": 55,
+          "accuracy": 0.8870967741935484
+        },
+        {
+          "name": "Pragmatics",
+          "n": 81,
+          "correct": 65,
+          "accuracy": 0.8024691358024691
+        },
+        {
+          "name": "Semantics",
+          "n": 215,
+          "correct": 170,
+          "accuracy": 0.7906976744186046
+        },
+        {
+          "name": "Syntax",
+          "n": 300,
+          "correct": 244,
+          "accuracy": 0.8133333333333334
+        }
+      ],
+      "by_level": [
+        {
+          "name": "1",
+          "n": 182,
+          "correct": 179,
+          "accuracy": 0.9835164835164835
+        },
+        {
+          "name": "2",
+          "n": 220,
+          "correct": 194,
+          "accuracy": 0.8818181818181818
+        },
+        {
+          "name": "3",
+          "n": 298,
+          "correct": 196,
+          "accuracy": 0.6577181208053692
+        }
+      ],
+      "invalid": {
+        "count": 50,
+        "rate": 0.071429
+      },
+      "empty_raw_output": 17,
+      "usage": {
+        "records_with_usage": 700,
+        "prompt_tokens": 405857,
+        "completion_tokens": 687144,
+        "reasoning_tokens": 353228,
+        "total_cost": 7.683154000000002,
+        "cost_source": "provider"
+      },
+      "cost": {
+        "usd": 7.683154000000002,
+        "per_correct": 0.013502906854130055,
+        "source": "measured"
+      },
+      "latency_ms": {
+        "n": 700,
+        "median": 7678.0,
+        "p95": 18177.0
+      },
+      "evidence": {
+        "snapshot": "site/data/runs/run-20260928-201103-claude-sonnet-5.5/config.snapshot.yaml",
+        "results": "site/data/runs/run-20260928-201103-claude-sonnet-5.5/results.json"
       }
     },
     {
@@ -524,6 +657,8 @@
         "rate": 0.167143
       },
       "empty_raw_output": 6,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
         "median": 5004.5,
@@ -622,6 +757,8 @@
         "rate": 0.037143
       },
       "empty_raw_output": 20,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
         "median": 10427.0,
@@ -716,6 +853,8 @@
         "rate": 0.118571
       },
       "empty_raw_output": 82,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
         "median": 9203.5,
@@ -816,6 +955,8 @@
         "rate": 0.03
       },
       "empty_raw_output": 0,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
         "median": 15443.5,
@@ -916,6 +1057,8 @@
         "rate": 0.17
       },
       "empty_raw_output": 119,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
         "median": 6324.5,
@@ -1016,6 +1159,8 @@
         "rate": 0.127143
       },
       "empty_raw_output": 0,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
         "median": 7375.0,
@@ -1117,6 +1262,8 @@
         "rate": 0.058571
       },
       "empty_raw_output": 39,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
         "median": 5217.5,
@@ -1211,6 +1358,8 @@
         "rate": 0.032857
       },
       "empty_raw_output": 0,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
         "median": 7158.0,
@@ -1222,14 +1371,14 @@
       }
     },
     {
-      "slug": "run-20260918-111541-solar-mini4-preview",
-      "path": "runs/run-20260918-111541-solar-mini4-preview",
-      "model": "solar-mini4-preview",
-      "label": "solar-mini4-preview",
-      "timestamp": "2026-09-18T11:15:41Z",
+      "slug": "run-20260926-050318-motif-3",
+      "path": "runs/run-20260926-050318-motif-3",
+      "model": "motif/motif-3",
+      "label": "motif-3",
+      "timestamp": "2026-09-26T05:03:18Z",
       "backend": "api",
       "provider": "openai",
-      "endpoint": "https://api.upstage.ai/v1",
+      "endpoint": "https://llm.onerouter.pro/v1",
       "reasoning_mode": "provider-default",
       "reasoning_effort": null,
       "reasoning_source": null,
@@ -1242,11 +1391,11 @@
         "revision": "0.0.0"
       },
       "total": 700,
-      "correct": 279,
-      "accuracy": 0.3985714285714286,
+      "correct": 275,
+      "accuracy": 0.39285714285714285,
       "wilson_95": {
-        "lo": 0.36295,
-        "hi": 0.435301
+        "lo": 0.357356,
+        "hi": 0.429528
       },
       "by_domain": [
         {
@@ -1258,61 +1407,63 @@
         {
           "name": "Phonetics/Phonology",
           "n": 62,
-          "correct": 14,
-          "accuracy": 0.22580645161290322
+          "correct": 8,
+          "accuracy": 0.12903225806451613
         },
         {
           "name": "Pragmatics",
           "n": 81,
-          "correct": 17,
-          "accuracy": 0.20987654320987653
+          "correct": 28,
+          "accuracy": 0.345679012345679
         },
         {
           "name": "Semantics",
           "n": 215,
-          "correct": 116,
-          "accuracy": 0.5395348837209303
+          "correct": 110,
+          "accuracy": 0.5116279069767442
         },
         {
           "name": "Syntax",
           "n": 300,
-          "correct": 123,
-          "accuracy": 0.41
+          "correct": 120,
+          "accuracy": 0.4
         }
       ],
       "by_level": [
         {
           "name": "1",
           "n": 182,
-          "correct": 143,
-          "accuracy": 0.7857142857142857
+          "correct": 136,
+          "accuracy": 0.7472527472527473
         },
         {
           "name": "2",
           "n": 220,
-          "correct": 101,
-          "accuracy": 0.4590909090909091
+          "correct": 102,
+          "accuracy": 0.4636363636363636
         },
         {
           "name": "3",
           "n": 298,
-          "correct": 35,
-          "accuracy": 0.1174496644295302
+          "correct": 37,
+          "accuracy": 0.12416107382550336
         }
       ],
       "invalid": {
-        "count": 173,
-        "rate": 0.247143
+        "count": 209,
+        "rate": 0.298571
       },
-      "empty_raw_output": 0,
+      "empty_raw_output": 3,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
-        "median": 3308.5,
-        "p95": 12356.0
+        "median": 29015.5,
+        "p95": 72759.0
       },
       "evidence": {
-        "snapshot": "site/data/runs/run-20260918-111541-solar-mini4-preview/config.snapshot.yaml",
-        "results": "site/data/runs/run-20260918-111541-solar-mini4-preview/results.json"
+        "snapshot": "site/data/runs/run-20260926-050318-motif-3/config.snapshot.yaml",
+        "results": "site/data/runs/run-20260926-050318-motif-3/results.json"
       }
     },
     {
@@ -1399,6 +1550,8 @@
         "rate": 0.164286
       },
       "empty_raw_output": 0,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
         "median": 4519.5,
@@ -1502,6 +1655,8 @@
         "rate": 0.002857
       },
       "empty_raw_output": 0,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
         "median": 6998.0,
@@ -1600,6 +1755,8 @@
         "rate": 0.147143
       },
       "empty_raw_output": 0,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
         "median": 76996.5,
@@ -1698,6 +1855,8 @@
         "rate": 0.0
       },
       "empty_raw_output": 0,
+      "usage": null,
+      "cost": null,
       "latency_ms": {
         "n": 700,
         "median": 1889.5,

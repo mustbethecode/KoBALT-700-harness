@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
-from kobalt_eval.backends.base import Backend
+from kobalt_eval.backends.base import Backend, GenerationResult, build_usage
 
 if TYPE_CHECKING:
     from kobalt_eval.config import RunConfig
@@ -67,7 +67,7 @@ class TransformersBackend(Backend):
         )
         self._model.eval()
 
-    def _generate_single(self, messages: list[dict], do_sample: bool, max_new_tokens: int) -> str:
+    def _generate_single(self, messages: list[dict], do_sample: bool, max_new_tokens: int) -> GenerationResult:
         self._ensure_loaded()
         tok = self._tokenizer
         mdl = self._model
@@ -88,9 +88,25 @@ class TransformersBackend(Backend):
         gen_kwargs.update(extra)
         outputs = mdl.generate(inputs, **gen_kwargs)
         # Upstream behavior: decode the full output (prompt + continuation).
-        return tok.decode(outputs[0], skip_special_tokens=True)
+        text = tok.decode(outputs[0], skip_special_tokens=True)
+        usage = _token_usage(inputs, outputs)
+        return GenerationResult(text=text, usage=usage)
 
-    def generate(self, messages_list: list[list[dict]], config: "RunConfig") -> list[str]:
+    def generate(self, messages_list: list[list[dict]], config: "RunConfig") -> list[GenerationResult]:
         do_sample = config.generation.do_sample if config is not None else self.do_sample
         max_new_tokens = config.generation.max_new_tokens if config is not None else self.max_new_tokens
         return [self._generate_single(m, do_sample, max_new_tokens) for m in messages_list]
+
+
+def _token_usage(inputs: Any, outputs: Any) -> dict[str, Any] | None:
+    """Prompt/completion token counts from the tokenized input and output.
+
+    Local engines have no dollar cost, so no cost key is emitted. Counting
+    is defensive: a tensor-shape surprise degrades to "usage unknown".
+    """
+    try:
+        prompt_tokens = int(inputs.shape[-1])
+        completion_tokens = max(0, int(outputs.shape[-1]) - prompt_tokens)
+    except Exception:  # noqa: BLE001 - defensive: never fail the run over usage
+        return None
+    return build_usage(prompt_tokens=prompt_tokens, completion_tokens=completion_tokens)

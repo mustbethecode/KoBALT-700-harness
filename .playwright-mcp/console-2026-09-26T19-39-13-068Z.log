@@ -1,0 +1,2 @@
+[    2419ms] [WARNING]   WARN  [Statsig] The user does not have the required id_type "userID" for Experiment "260812-pc-search-recently-viewed" @ https://frontend-app-cdn.jobkorea.co.kr/recruit/web/_next/static/chunks/2009-86af1aacecb6a7ce.js:6
+[    3102ms] [WARNING]   WARN  [Statsig] The user does not have the required id_type "userID" for Experiment "260812-pc-search-recently-viewed" @ https://frontend-app-cdn.jobkorea.co.kr/recruit/web/_next/static/chunks/2009-86af1aacecb6a7ce.js:6

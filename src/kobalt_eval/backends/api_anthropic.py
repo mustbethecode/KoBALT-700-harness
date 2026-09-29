@@ -11,7 +11,13 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from typing import TYPE_CHECKING, Any
 
-from kobalt_eval.backends.base import AuthenticationFailed, Backend
+from kobalt_eval.backends.base import (
+    AuthenticationFailed,
+    Backend,
+    GenerationResult,
+    _as_mapping,
+    build_usage,
+)
 
 if TYPE_CHECKING:
     from kobalt_eval.config import RunConfig
@@ -25,6 +31,21 @@ def _is_transient(exc: Exception) -> bool:
     if "ratelimit" in name or "internalserver" in name or "apiconnection" in name:
         return True
     return any(m in msg for m in _TRANSIENT_MARKERS)
+
+
+def _usage_from_response(resp: Any) -> dict[str, Any] | None:
+    """Canonical usage from an Anthropic response, or None.
+
+    The Messages API reports input/output token counts; it does not report
+    a dollar cost, so no cost key is emitted.
+    """
+    data = _as_mapping(getattr(resp, "usage", None))
+    if data is None:
+        return None
+    return build_usage(
+        prompt_tokens=data.get("input_tokens"),
+        completion_tokens=data.get("output_tokens"),
+    )
 
 
 class AnthropicBackend(Backend):
@@ -86,7 +107,7 @@ class AnthropicBackend(Backend):
                 rest.append({"role": m["role"], "content": m.get("content", "")})
         return system, rest
 
-    def _call_once(self, client, messages: list[dict]) -> str:
+    def _call_once(self, client, messages: list[dict]) -> GenerationResult:
         system, rest = self._split_messages(messages)
         params: dict[str, Any] = {
             "model": self.model,
@@ -103,7 +124,7 @@ class AnthropicBackend(Backend):
         for block in getattr(resp, "content", []) or []:
             if getattr(block, "type", "") == "text":
                 parts.append(getattr(block, "text", ""))
-        return "".join(parts)
+        return GenerationResult(text="".join(parts), usage=_usage_from_response(resp))
 
     def _as_auth_failed(self, exc: Exception) -> AuthenticationFailed | None:
         """Map SDK auth/permission errors to fatal AuthenticationFailed."""
@@ -119,7 +140,7 @@ class AnthropicBackend(Backend):
             )
         return None
 
-    def _generate_single(self, messages: list[dict]) -> str:
+    def _generate_single(self, messages: list[dict]) -> GenerationResult:
         client = self._client()
         last: Exception | None = None
         for attempt in range(self.max_retries + 1):
@@ -136,7 +157,7 @@ class AnthropicBackend(Backend):
         assert last is not None
         raise last
 
-    def generate(self, messages_list: list[list[dict]], config: "RunConfig") -> list[str]:
+    def generate(self, messages_list: list[list[dict]], config: "RunConfig") -> list[GenerationResult]:
         if config is not None and getattr(config, "generation", None) is not None:
             self.max_new_tokens = config.generation.max_new_tokens
         if len(messages_list) > 1 and self.concurrency > 1:

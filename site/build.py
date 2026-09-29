@@ -717,6 +717,76 @@ def load_results(path: str | Path) -> dict[str, Any]:
     return data
 
 
+def load_cost_overlay(path: str | Path) -> dict[str, float]:
+    """Operator-reported run costs (USD), keyed by run slug.
+
+    Used for runs that predate usage capture. Missing file, unreadable file,
+    or malformed entries are skipped rather than fatal — a cost overlay must
+    never break the build.
+    """
+    p = Path(path)
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    if not isinstance(data, dict):
+        return {}
+    costs = data.get("costs")
+    if not isinstance(costs, dict):
+        return {}
+    out: dict[str, float] = {}
+    for slug, usd in costs.items():
+        if (
+            isinstance(slug, str)
+            and isinstance(usd, (int, float))
+            and not isinstance(usd, bool)
+            and math.isfinite(float(usd))
+            and float(usd) >= 0
+        ):
+            out[slug] = float(usd)
+    return out
+
+
+def _usage_block(results: dict[str, Any]) -> dict[str, Any] | None:
+    """Validated aggregate usage from results.json (None when absent)."""
+    usage = results.get("usage")
+    if not isinstance(usage, dict):
+        return None
+    if not isinstance(usage.get("records_with_usage"), int):
+        return None
+    return usage
+
+
+def _cost_block(
+    slug: str,
+    results: dict[str, Any],
+    num_correct: int,
+    cost_overlay: dict[str, float] | None,
+) -> dict[str, Any] | None:
+    """Per-run cost: measured provider cost wins over the reported overlay."""
+    usage = _usage_block(results)
+    total_cost = usage.get("total_cost") if usage else None
+    if isinstance(total_cost, (int, float)) and not isinstance(total_cost, bool):
+        if not math.isfinite(float(total_cost)) or float(total_cost) < 0:
+            return None
+        per_correct = results.get("cost_per_correct")
+        if not isinstance(per_correct, (int, float)) or isinstance(per_correct, bool):
+            per_correct = (float(total_cost) / num_correct) if num_correct else None
+        return {
+            "usd": float(total_cost),
+            "per_correct": float(per_correct) if isinstance(per_correct, (int, float)) else None,
+            "source": "measured",
+        }
+    reported = (cost_overlay or {}).get(slug)
+    if isinstance(reported, (int, float)) and not isinstance(reported, bool):
+        return {
+            "usd": float(reported),
+            "per_correct": (float(reported) / num_correct) if num_correct else None,
+            "source": "reported",
+        }
+    return None
+
+
 def _normalize_group_table(raw: Any, slug: str, field: str) -> list[dict[str, Any]]:
     if not isinstance(raw, dict) or not raw:
         raise BuildError(f"{slug}: malformed results.json ({field!r} table missing or empty)")
@@ -743,8 +813,11 @@ def _sort_key_for_group(name: str) -> tuple[int, Any]:
             return (1, name)
 
 
-def summarize_run(run_dir: str | Path) -> dict[str, Any]:
+def summarize_run(run_dir: str | Path, cost_overlay: dict[str, float] | None = None) -> dict[str, Any]:
     """Validate one completed run dir and derive its site record.
+
+    ``cost_overlay`` supplies operator-reported USD costs for runs that
+    predate usage capture; measured provider cost always wins.
 
     Raises :class:`BuildError` with a clearly-attributed message for any
     malformed completed run.
@@ -858,6 +931,8 @@ def summarize_run(run_dir: str | Path) -> dict[str, Any]:
         and math.isfinite(float(rec["latency_ms"]))
     ]
     lo, hi = wilson_interval(correct, total)
+    usage = _usage_block(results)
+    cost = _cost_block(slug, results, correct, cost_overlay)
 
     return {
         "slug": slug,
@@ -884,6 +959,8 @@ def summarize_run(run_dir: str | Path) -> dict[str, Any]:
         "by_level": by_level,
         "invalid": {"count": invalid, "rate": round(invalid / total, 6)},
         "empty_raw_output": empty_raw,
+        "usage": usage,
+        "cost": cost,
         "latency_ms": {
             "n": len(latencies),
             "median": median_of(latencies),
@@ -900,14 +977,18 @@ def summarize_run(run_dir: str | Path) -> dict[str, Any]:
 # Payload assembly
 # ---------------------------------------------------------------------------
 
-def build_payload(runs_dir: str | Path, generated_at: str | None = None) -> dict[str, Any]:
+def build_payload(
+    runs_dir: str | Path,
+    generated_at: str | None = None,
+    cost_overlay: dict[str, float] | None = None,
+) -> dict[str, Any]:
     """Discover, validate and summarize every completed run.
 
     Primary runs come first sorted by descending accuracy, then ablations
     (each group: descending accuracy, slug ascending for full determinism).
     """
     completed, skipped = discover_runs(runs_dir)
-    summaries = [summarize_run(d) for d in completed]
+    summaries = [summarize_run(d, cost_overlay=cost_overlay) for d in completed]
 
     totals = {s["total"] for s in summaries}
     if len(totals) > 1:
@@ -998,12 +1079,18 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--runs-dir", default=None, help="runs directory (default: <repo>/runs)")
     parser.add_argument("--out", default=None, help="results.json path (default: <repo>/site/results.json)")
     parser.add_argument("--data-dir", default=None, help="evidence dir (default: <repo>/site/data/runs)")
+    parser.add_argument(
+        "--costs",
+        default=None,
+        help="operator-reported run costs JSON (default: <repo>/site/run_costs.json)",
+    )
     args = parser.parse_args(argv)
 
     root = repo_root()
     runs_dir = Path(args.runs_dir) if args.runs_dir else root / "runs"
+    costs_path = Path(args.costs) if args.costs else root / "site" / "run_costs.json"
     try:
-        payload = build_payload(runs_dir)
+        payload = build_payload(runs_dir, cost_overlay=load_cost_overlay(costs_path))
     except BuildError as e:
         print(f"site/build.py: error: {e}", file=sys.stderr)
         return 1
@@ -1014,9 +1101,13 @@ def main(argv: list[str] | None = None) -> int:
 
     n_primary = sum(1 for r in payload["runs"] if r["category"] == "primary")
     n_ablation = len(payload["runs"]) - n_primary
+    n_reported = sum(
+        1 for r in payload["runs"]
+        if isinstance(r.get("cost"), dict) and r["cost"].get("source") == "reported"
+    )
     print(
         f"site/build.py: {len(payload['runs'])} runs "
-        f"({n_primary} primary, {n_ablation} ablation), "
+        f"({n_primary} primary, {n_ablation} ablation, {n_reported} reported-cost), "
         f"{len(payload['skipped'])} skipped -> {out_path}"
     )
     return 0

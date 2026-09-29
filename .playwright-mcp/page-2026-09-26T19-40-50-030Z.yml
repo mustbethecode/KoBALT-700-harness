@@ -1,0 +1,709 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - heading [level=1] [ref=e8]:
+            - link [ref=e9] [cursor=pointer]:
+              - /url: https://www.jobkorea.co.kr
+              - img "JOBKOREA" [ref=e10]
+          - generic [ref=e11]:
+            - button "지역 전체" [ref=e14] [cursor=pointer]
+            - generic [ref=e24]:
+              - combobox "JOB 검색" [ref=e26]
+              - button [ref=e28] [cursor=pointer]
+        - generic [ref=e32]:
+          - link "회원가입/로그인" [ref=e33] [cursor=pointer]:
+            - /url: https://www.jobkorea.co.kr/Login/Login_Tot.asp?rDBName=GG&re_url=%2FRecruit%2FGI_Read%2F49903764
+          - button "기업 서비스" [ref=e36] [cursor=pointer]
+      - navigation "메인 메뉴" [ref=e41]:
+        - list [ref=e42]:
+          - listitem [ref=e43]:
+            - link "JOB 찾기" [ref=e44] [cursor=pointer]:
+              - /url: https://www.jobkorea.co.kr/recruit/joblist?menucode=local&localorder=1
+          - listitem [ref=e45]:
+            - link "합격축하금" [ref=e46] [cursor=pointer]:
+              - /url: https://www.jobkorea.co.kr/OnePick/JobList?Ord=GcmCodeAmtDesc
+          - listitem [ref=e47]:
+            - link "공채정보" [ref=e48] [cursor=pointer]:
+              - /url: https://www.jobkorea.co.kr/starter
+          - listitem [ref=e49]:
+            - link "신입·인턴" [ref=e50] [cursor=pointer]:
+              - /url: https://www.jobkorea.co.kr/theme/entry-level-internship
+          - listitem [ref=e51]:
+            - link "기업·연봉" [ref=e52] [cursor=pointer]:
+              - /url: https://www.jobkorea.co.kr/Review/Home
+          - listitem [ref=e53]:
+            - link "콘텐츠" [ref=e54] [cursor=pointer]:
+              - /url: https://www.jobkorea.co.kr/goodjob/tip
+          - listitem [ref=e55]:
+            - link "취업톡톡" [ref=e56] [cursor=pointer]:
+              - /url: https://www.jobkorea.co.kr/User/Qstn/Index
+    - separator [ref=e57]
+  - main [ref=e58]:
+    - generic [ref=e60]:
+      - heading "콘텐츠 마케터 채용 (온드미디어·뉴스레터 운영 / 디자인·기획 지원)" [level=1] [ref=e66]
+      - generic [ref=e67]:
+        - generic [ref=e68] [cursor=pointer]: 
+        - generic [ref=e72]: 
+    - tablist [ref=e79]:
+      - tab "상세요강" [ref=e80] [cursor=pointer]
+      - tab "접수기간∙방법" [active] [selected] [ref=e81] [cursor=pointer]
+      - tab "기업정보" [ref=e82] [cursor=pointer]
+      - tab "추천공고" [ref=e83] [cursor=pointer]
+    - generic [ref=e84]:
+      - generic [ref=e86]:
+        - iframe [ref=e87]:
+          - generic [ref=f1e1]:
+            - table [ref=f1e4]:
+              - rowgroup [ref=f1e5]:
+                - row [ref=f1e6]:
+                  - cell [ref=f1e7]:
+                    - article [ref=f1e9]:
+                      - generic [ref=f1e10]:
+                        - generic [ref=f1e11]:
+                          - generic [ref=f1e13]:
+                            - paragraph [ref=f1e15]: ㈜참인터랙티브
+                            - generic [ref=f1e16]:
+                              - paragraph [ref=f1e17]: 콘텐츠 마케터 채용
+                              - paragraph [ref=f1e18]: (온드미디어·뉴스레터 운영 / 디자인·기획 지원)
+                          - generic [ref=f1e19]:
+                            - generic [ref=f1e20]: ㈜참인터랙티브는 2018년에 설립된 회사입니다.
+                            - generic [ref=f1e21]: 자본금 1억원, 매출액 50억, 사원수 4명 규모의 중소기업입니다.
+                            - generic [ref=f1e22]: 서울 강남구 역삼로10길 6 (역삼동)에 위치하고 있으며, 광고 대행 사업을 하고 있습니다.
+                            - generic [ref=f1e24]: 저희는 브랜드 캠페인의 기획과 전략 수립부터 매체 운영까지 전반을 폭넓게 지원합니다.
+                            - generic [ref=f1e25]: 옥외광고(OOH)를 비롯해 ATL·BTL 마케팅, 디지털/온라인 퍼포먼스 마케팅까지 캠페인 목적에 맞는 실행을 진행합니다.
+                            - paragraph [ref=f1e26]
+                            - paragraph [ref=f1e27]: "[주요 프로젝트 수행]"
+                            - paragraph [ref=f1e28]
+                            - paragraph [ref=f1e29]: 당사는 닥터포헤어(Dr.FORHAIR) 및 어노브(UNOVE)의 옥외광고 캠페인을
+                            - paragraph [ref=f1e30]: 브랜드 런칭 시점부터 전 기간에 걸쳐 집행해 왔고 세탁특공대, 리쥬란 코스메틱(REJURAN COSMETIC) 등
+                            - paragraph [ref=f1e31]: 다수 브랜드의 통합 캠페인 역시 집행을 완료 하였습니다.
+                            - paragraph [ref=f1e32]
+                            - paragraph [ref=f1e33]: 해외 프로젝트로는 리쥬란 코스메틱(REJURAN COSMETIC), 어노브(UNOVE)의
+                            - paragraph [ref=f1e34]: 일본 도쿄(시부야·하라주쿠·오모테산도 등) 옥외광고 집행과 팝업스토어(엣코즈메) 운영까지 집행해 온 이력이 있습니다.
+                            - paragraph [ref=f1e35]
+                            - paragraph [ref=f1e36]: 함께 더 좋은 결과를 만들어갈 분을 기다립니다.
+                            - paragraph [ref=f1e37]: 감사합니다.
+                            - paragraph [ref=f1e38]: ㈜참인터랙티브
+                        - generic [ref=f1e39]:
+                          - generic [ref=f1e40]:
+                            - table [ref=f1e41]:
+                              - rowgroup [ref=f1e42]:
+                                - row [ref=f1e43]:
+                                  - cell [ref=f1e44]:
+                                    - paragraph [ref=f1e45]: 포지션 및 자격요건
+                            - table [ref=f1e48]:
+                              - rowgroup [ref=f1e49]:
+                                - row [ref=f1e50]:
+                                  - cell [ref=f1e51]:
+                                    - paragraph [ref=f1e52]: 콘텐츠 마케터 (온드미디어·뉴스레터 운영 / 디자인·기획 지원)
+                                  - cell [ref=f1e53]:
+                                    - table [ref=f1e56]:
+                                      - rowgroup [ref=f1e57]:
+                                        - row [ref=f1e58]:
+                                          - cell [ref=f1e59]:
+                                            - paragraph [ref=f1e60]: 담당업무
+                                            - paragraph [ref=f1e61]
+                                            - paragraph [ref=f1e62]: 온드미디어 운영
+                                            - paragraph [ref=f1e63]: ㆍ 회사 블로그 포스팅 및 운영 / 광고 진행 레퍼런스(프로젝트 사례) 업데이트 및 관리ㆍ 인스타그램, 홈페이지 등 자사 채널 콘텐츠 기획 및 운영ㆍ 콘텐츠용 이미지, 썸네일, 디자인 제작 및 편집ㆍ 광고 결과물 및 진행 현장 자료를 정리해 브랜딩 콘텐츠화ㆍ 콘텐츠 성과 분석 및 개선 제안
+                                            - paragraph [ref=f1e64]
+                                            - paragraph [ref=f1e65]: 뉴스레터
+                                            - paragraph [ref=f1e66]: ㆍ 옥외광고·마케팅 업계 소식을 큐레이션한 자사 뉴스레터 기획·제작·정기 발행ㆍ 구독자 관리 및 발행 성과 분석
+                                            - paragraph [ref=f1e67]
+                                            - paragraph [ref=f1e68]: 기획 지원
+                                            - paragraph [ref=f1e69]: ㆍ 광고 제안서 작성 지원 (자료 조사·내용 정리·문서 작성 서포트)ㆍ 자사 옥외광고 플랫폼 자료 취합·정리 및 등록
+                                            - paragraph [ref=f1e70]
+                                            - paragraph [ref=f1e71]: 스킬
+                                            - paragraph [ref=f1e72]: ㆍ ai기반 디자인 툴 가용 가능자 우대 Excel, PowerPoint, Illustrator
+                                            - paragraph [ref=f1e73]
+                                            - paragraph [ref=f1e74]: 핵심역량
+                                            - paragraph [ref=f1e75]: ㆍ 꼼꼼함(자료 정리/아카이빙), 성장지향성, 적응성, 창의성ㆍ 자기 주도적으로 업무를 계획하고 실행할 수 있는 태도(일정/우선순위 관리)
+                                            - paragraph [ref=f1e76]: ㆍ 시각적 감각과 문장력을 함께 갖춘 콘텐츠 감각(정보를 ‘보기 쉽게’ 만드는 능력)
+                                            - paragraph [ref=f1e77]
+                                            - paragraph [ref=f1e78]: 자격요건
+                                            - paragraph [ref=f1e79]: "ㆍ 학력: 무관ㆍ 경력: 무관(신입·경력 모두 지원 가능)ㆍ 기본 디자인 역량 및 온드미디어 운영에 대한 이해를 보유하신 분ㆍ 콘텐츠/디자인 포트폴리오 제출 가능자(형식 자유: PDF/노션/링크 등)"
+                                            - paragraph [ref=f1e80]
+                                            - paragraph [ref=f1e81]: 우대사항
+                                            - paragraph [ref=f1e82]: ㆍ 광고·마케팅 업계 근무 경험 또는 관련 전공ㆍ 블로그/인스타그램/홈페이지 등 채널 운영 경험(직접 운영, 인턴/프로젝트 포함)ㆍ 슬랙,노션 활용 가능자(자료 정리·협업·일정 관리)ㆍ 워드프레스 등 CMS 사용 경험(게시/페이지 수정/이미지 최적화 등)ㆍ 프로젝트 사례(레퍼런스) 정리 경험 또는 케이스 스터디 제작 경험ㆍ 스티비 등 이메일 마케팅 툴 활용 경험(뉴스레터 발행)ㆍ 제안서·기획서 등 비즈니스 문서 작성 경험
+                                            - paragraph [ref=f1e83]: ㆍ 포트폴리오(디자인·콘텐츠 운영 사례 등) 제출
+                          - paragraph [ref=f1e84]
+                          - table [ref=f1e87]:
+                            - rowgroup [ref=f1e88]:
+                              - row [ref=f1e89]:
+                                - cell [ref=f1e90]:
+                                  - paragraph [ref=f1e91]: 전형절차
+                                  - paragraph [ref=f1e93]: ㆍ서류전형 > 임원면접 > 최종합격
+                                  - paragraph [ref=f1e94]: ㆍ면접일정은 추후 통보됩니다.
+                          - paragraph [ref=f1e95]
+                          - table [ref=f1e98]:
+                            - rowgroup [ref=f1e99]:
+                              - row [ref=f1e100]:
+                                - cell [ref=f1e101]:
+                                  - paragraph [ref=f1e102]: 유의사항
+                                  - paragraph [ref=f1e104]: ㆍ허위사실이 발견될 경우 채용이 취소될 수 있습니다.
+                          - paragraph [ref=f1e105]
+            - region "Notifications alt+T"
+            - alert [ref=f1e106]
+        - generic [ref=e88]:
+          - generic [ref=e89]: 
+          - generic [ref=e90]:
+            - text: 채용정보에 잘못된 내용이 있을 경우
+            - button "문의" [ref=e91] [cursor=pointer]
+            - text: 해주세요.
+      - generic [ref=e93]:
+        - generic [ref=e94]: 모집요강
+        - generic [ref=e95]:
+          - generic [ref=e97]:
+            - generic [ref=e98]: 모집분야
+            - generic [ref=e99]: 콘텐츠 마케터(온드미디어·뉴스레터 운영/디자인
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - generic [ref=e104]: 모집인원
+              - generic [ref=e105]: 1명
+            - generic [ref=e106]:
+              - generic [ref=e107]: 고용형태
+              - generic [ref=e108]: 정규직(수습 3개월)
+            - generic [ref=e111]:
+              - generic [ref=e112]: 직급/직책
+              - list [ref=e113]:
+                - listitem [ref=e114]:
+                  - generic [ref=e116]: 사원급, 주임~대리급, 과장~차장급, 부장급
+                - listitem [ref=e117]:
+                  - generic [ref=e119]: 팀원, 팀장/매니저/실장, 파트장/그룹장, 본부장/센터장
+            - generic [ref=e120]:
+              - generic [ref=e121]: 급여
+              - generic [ref=e122]: 연봉 3,000만원 이상 (면접 후 결정)
+            - generic [ref=e123]:
+              - generic [ref=e124]: 근무시간
+              - list [ref=e125]:
+                - listitem [ref=e126]:
+                  - generic [ref=e128]: 주5일(월~금)
+                - listitem [ref=e129]:
+                  - generic [ref=e131]: 09:30 ~ 18:30
+            - generic [ref=e132]:
+              - generic [ref=e133]: 근무지주소
+              - generic [ref=e135]:
+                - generic [ref=e136]: 서울 강남구 역삼로10길 6 (역삼동) (주)참인터랙티브
+                - button "지도보기 " [ref=e137] [cursor=pointer]:
+                  - generic [ref=e138]: 지도보기
+                  - generic [ref=e140]: 
+            - generic [ref=e141]:
+              - generic [ref=e142]: 인근지하철
+              - generic [ref=e143]:
+                - generic [ref=e144]:
+                  - generic [ref=e145]: 2호선
+                  - generic [ref=e147]: 역삼역 에서 800m (도보 12분) 이내
+                - generic [ref=e148]:
+                  - generic [ref=e149]:
+                    - generic [ref=e150]: 2호선
+                    - generic [ref=e151]: 신분당선
+                  - generic [ref=e152]: 강남역 에서 800m (도보 12분) 이내
+      - generic [ref=e153]:
+        - generic [ref=e154]: 지원자격
+        - generic [ref=e157]:
+          - generic [ref=e158]:
+            - generic [ref=e159]: 경력
+            - generic [ref=e160]: 경력무관
+          - generic [ref=e162]:
+            - generic [ref=e163]: 학력
+            - generic [ref=e164]: 학력무관
+          - generic [ref=e166]:
+            - generic [ref=e167]: 스킬
+            - generic [ref=e168]: Excel, Figma, Notion, PowerPoint, Illustrator, Photoshop
+          - generic [ref=e169]:
+            - generic [ref=e170]: 핵심역량
+            - generic [ref=e171]:
+              - generic [ref=e172]: 성취지향성,
+              - generic [ref=e173]: 꼼꼼함,
+              - generic [ref=e174]: 창의성,
+              - generic [ref=e175]: 성장지향성,
+              - generic [ref=e176]: 윤리의식,
+              - generic [ref=e177]: 자존감,
+              - text: 적응성
+      - generic [ref=e178]:
+        - text: 이 기업과 나의 적합도 체크
+        - generic [ref=e179]:
+          - generic [ref=e181]:
+            - generic [ref=e182]:
+              - generic [ref=e183]: 핵심 역량
+              - paragraph [ref=e184]: 회사에서 중요하게 생각하는 역량과 가치가나와 맞는지 알아보기
+            - generic [ref=e185]:
+              - generic [ref=e186]: 회사
+              - generic [ref=e189]: 나
+          - button "지금 로그인 하면 나와 회사의 적합도를 비교해볼 수 있어요. " [ref=e195] [cursor=pointer]:
+            - generic [ref=e196]: 지금 로그인 하면 나와 회사의 적합도를 비교해볼 수 있어요.
+            - generic [ref=e197]: 
+      - generic [ref=e198]:
+        - text: 접수기간 · 방법
+        - generic [ref=e199]:
+          - generic [ref=e201]:
+            - generic [ref=e202]:
+              - generic [ref=e203]: 남은기간
+              - generic [ref=e204]: 34일 19:19:09
+            - generic [ref=e205]:
+              - generic [ref=e206]:
+                - generic [ref=e207]: 시작일
+                - generic [ref=e208]: 2026.09.01(화)
+              - generic [ref=e209]:
+                - generic [ref=e210]: 마감일
+                - generic [ref=e211]: 2026.10.31(토)채용 시 마감
+          - generic [ref=e215]:
+            - generic [ref=e216]:
+              - generic [ref=e217]:
+                - generic [ref=e218]: 접수방법
+                - button "잡코리아 즉시지원" [ref=e220] [cursor=pointer]
+              - generic [ref=e221]:
+                - generic [ref=e222]: 지원양식
+                - generic [ref=e223]: 잡코리아 이력서
+              - generic [ref=e224]:
+                - generic [ref=e225]: 첨부서류
+                - generic [ref=e226]: 포트폴리오
+            - generic [ref=e229]:
+              - generic [ref=e230]: 인사담당자
+              - generic [ref=e233]:
+                - text: 조진호 팀장 (기획팀)
+                - generic [ref=e234]: 
+        - generic [ref=e237]:
+          - generic [ref=e238]: 
+          - generic [ref=e239]: 마감일은 기업의 사정으로 인해 조기 마감 또는 변경될 수 있습니다
+      - generic [ref=e240]:
+        - generic [ref=e241]: 지원자 현황 통계
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - generic [ref=e246]:
+              - generic [ref=e247]:
+                - text: 지원자 수
+                - generic [ref=e248]: 8 명
+              - generic [ref=e250]:
+                - text: 모집인원
+                - generic [ref=e251]: 1 명
+            - generic [ref=e252]:
+              - generic [ref=e253]: 경력
+              - generic [ref=e257]: 희망연봉
+          - generic [ref=e262]:
+            - generic [ref=e263]: 이 공고에 지원한지원자들의 현황이 궁금하다면?
+            - button "로그인/회원가입" [ref=e267] [cursor=pointer]
+      - generic [ref=e269]:
+        - generic [ref=e270]:
+          - generic [ref=e271]: 기업 정보
+          - link "기업정보 더보기 " [ref=e272] [cursor=pointer]:
+            - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/33284004
+            - generic [ref=e273]: 기업정보 더보기
+            - generic [ref=e274]: 
+        - generic [ref=e275]:
+          - generic [ref=e277]:
+            - generic [ref=e280]: 사원수
+            - generic [ref=e281]: 50명 이하
+          - generic [ref=e284]:
+            - generic [ref=e287]: 기업구분
+            - generic [ref=e288]: 중소기업 (비상장)
+          - generic [ref=e291]:
+            - generic [ref=e294]: 산업(업종)
+            - generic [ref=e295]: 광고·홍보·전시
+          - generic [ref=e298]:
+            - link "지도보기" [ref=e301] [cursor=pointer]:
+              - /url: https://map.naver.com?mapMode=0&dlevel=12&pinTitle=%E3%88%9C%EC%B0%B8%EC%9D%B8%ED%84%B0%EB%9E%99%ED%8B%B0%EB%B8%8C&lat=37.49378515556594&lng=127.0339105052256
+            - generic [ref=e302]: 위치
+            - generic [ref=e303]: 서울 강남구 역삼로10길 6 (역삼동) (주)참인터랙티브
+      - generic [ref=e307]:
+        - text: 관련 태그
+        - generic [ref=e310]:
+          - link "웹기획" [ref=e312] [cursor=pointer]:
+            - /url: https://www.jobkorea.co.kr/Recruit/JobList?menucode=duty&duty=1000186
+          - link "콘텐츠기획" [ref=e315] [cursor=pointer]:
+            - /url: https://www.jobkorea.co.kr/Recruit/JobList?menucode=duty&duty=1000186&dkwrd=100018647748312
+          - link "콘텐츠마케터" [ref=e318] [cursor=pointer]:
+            - /url: https://www.jobkorea.co.kr/Recruit/JobList?menucode=duty&duty=1000221
+          - link "서울>강남구" [ref=e321] [cursor=pointer]:
+            - /url: https://www.jobkorea.co.kr/Recruit/JobList?menucode=local&local=I010
+        - generic [ref=e326]:
+          - generic [ref=e327]:
+            - generic [ref=e328]: 
+            - generic [ref=e329]: 본 채용정보는 잡코리아의 동의없이 무단전재,재배포,재가공할수 없으며,구직활동 이외의 용도로 사용할 수 없습니다.
+            - generic [ref=e330] [cursor=pointer]: 
+          - generic [ref=e331]:
+            - link "불법/허위/과장/오류 신고" [ref=e332] [cursor=pointer]:
+              - /url: https://www.jobkorea.co.kr/help/inquiry?ctgrNo=603&giNo=51541161&coMemType=C&gNo=49903764
+            - generic [ref=e333]: 
+    - generic [ref=e337]:
+      - generic [ref=e341]:
+        - button "로그인" [ref=e342] [cursor=pointer]
+        - text: 하고 비슷한 조건의 AI추천공고를 확인해 보세요!
+      - generic [ref=e343]:
+        - generic [ref=e345] [cursor=pointer]:
+          - button "" [ref=e346]
+          - generic [ref=e348]:
+            - link "프리엠컴퍼니" [ref=e349]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/24533857?Oem_Code=C1&sc=7
+            - button "" [ref=e351]
+          - generic [ref=e353]:
+            - generic [ref=e354]: "[마케팅/SNS] 브랜드 통합 마케팅 기획·운영 및 콘텐츠 크리에이터 채용(신입/경력)"
+            - generic [ref=e355]:
+              - generic [ref=e356]:
+                - generic [ref=e357]: 학력무관
+                - generic [ref=e358]: 경력무관
+                - generic [ref=e359]: 서울, 경기
+              - generic [ref=e360]: 경영·비즈니스기획,마케팅기획,PL·PM·PO 외 17건
+          - generic [ref=e361]:
+            - generic [ref=e362]: ~10.09 (금)
+            - button "즉시 지원" [ref=e363]
+        - generic [ref=e366] [cursor=pointer]:
+          - button "" [ref=e367]
+          - generic [ref=e369]:
+            - link "통로이미지㈜" [ref=e370]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/11824347?Oem_Code=C1&sc=7
+            - button "" [ref=e372]
+          - generic [ref=e374]:
+            - generic [ref=e375]: "[클립아트코리아] 브랜드 전략·IMC 마케팅 리더 모집(팀장급 이상)"
+            - generic [ref=e376]:
+              - generic [ref=e377]:
+                - generic [ref=e378]: 대졸↑
+                - generic [ref=e379]: 경력10년↑
+                - generic [ref=e380]: 서울 > 중구
+              - generic [ref=e381]: 퍼포먼스마케터,AE(광고기획자),홍보
+          - generic [ref=e382]:
+            - generic [ref=e383]: ~09.30 (수)
+            - button "즉시 지원" [ref=e384]
+        - generic [ref=e387] [cursor=pointer]:
+          - button "" [ref=e388]
+          - generic [ref=e390]:
+            - link "㈜카이브컴퍼니" [ref=e391]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/43507277?Oem_Code=C1&sc=7
+            - button "" [ref=e393]
+          - generic [ref=e395]:
+            - generic [ref=e396]: 카이브컴퍼니 콘텐츠마케터 모집
+            - generic [ref=e397]:
+              - generic [ref=e398]:
+                - generic [ref=e399]: 학력무관
+                - generic [ref=e400]: 신입·경력
+                - generic [ref=e401]: 서울 > 강남구
+              - generic [ref=e402]: 콘텐츠마케터,PD·감독,영상편집자
+          - generic [ref=e403]:
+            - generic [ref=e404]: ~10.10 (토)
+            - button "즉시 지원" [ref=e405]
+        - generic [ref=e408] [cursor=pointer]:
+          - button "" [ref=e409]
+          - generic [ref=e411]:
+            - link "㈜씨드앤" [ref=e412]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/36049997?Oem_Code=C1&sc=7
+            - button "" [ref=e414]
+          - generic [ref=e416]:
+            - generic [ref=e417]: 콘텐츠 마케터(신입)
+            - generic [ref=e418]:
+              - generic [ref=e419]:
+                - generic [ref=e420]: 합격축하금 100만원
+                - generic [ref=e423]: 학력무관
+                - generic [ref=e424]: 신입
+                - generic [ref=e425]: 서울 > 송파구
+              - generic [ref=e426]: 콘텐츠마케터
+          - generic [ref=e427]:
+            - generic [ref=e428]: ~10.10 (토)
+            - button "즉시 지원" [ref=e429]
+        - generic [ref=e432] [cursor=pointer]:
+          - button "" [ref=e433]
+          - generic [ref=e435]:
+            - link "㈜퓨리라운드" [ref=e436]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/44252331?Oem_Code=C1&sc=7
+            - button "" [ref=e438]
+          - generic [ref=e440]:
+            - generic [ref=e441]: 온라인쇼핑몰 CS 담당자 모집
+            - generic [ref=e442]:
+              - generic [ref=e443]:
+                - generic [ref=e444]: 초대졸↑
+                - generic [ref=e445]: 경력
+                - generic [ref=e446]: 인천 > 서해구
+              - generic [ref=e447]: 인바운드상담원
+          - generic [ref=e448]:
+            - generic [ref=e449]: ~10.23 (금)
+            - button "즉시 지원" [ref=e450]
+        - generic [ref=e453] [cursor=pointer]:
+          - button "" [ref=e454]
+          - generic [ref=e456]:
+            - link "㈜SR호텔 사당점" [ref=e457]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/17275536?Oem_Code=C1&sc=7
+            - button "" [ref=e459]
+          - generic [ref=e461]:
+            - generic [ref=e462]: SRM과 함께할 마케터 모집
+            - generic [ref=e463]:
+              - generic [ref=e464]:
+                - generic [ref=e465]: 고졸↑
+                - generic [ref=e466]: 신입·경력
+                - generic [ref=e467]: 서울, 경기
+              - generic [ref=e468]: 영업관리,영업지원,매장관리자 외 8건
+          - generic [ref=e469]:
+            - generic [ref=e470]: ~10.23 (금)
+            - button "즉시 지원" [ref=e471]
+        - generic [ref=e474] [cursor=pointer]:
+          - button "" [ref=e475]
+          - generic [ref=e477]:
+            - link "㈜퍼플링크" [ref=e478]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/21027938?Oem_Code=C1&sc=7
+            - button "" [ref=e480]
+          - generic [ref=e482]:
+            - generic [ref=e483]: "[NOT4U] 퍼포먼스 마케터"
+            - generic [ref=e484]:
+              - generic [ref=e485]:
+                - generic [ref=e486]: 합격축하금 100만원
+                - generic [ref=e489]: 학력무관
+                - generic [ref=e490]: 경력5년↑
+                - generic [ref=e491]: 서울 > 성동구
+              - generic [ref=e492]: 퍼포먼스마케터
+          - generic [ref=e493]:
+            - generic [ref=e494]: ~10.22 (목)
+            - button "즉시 지원" [ref=e495]
+        - generic [ref=e498] [cursor=pointer]:
+          - button "" [ref=e499]
+          - generic [ref=e501]:
+            - link "워드캣" [ref=e502]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/34466092?Oem_Code=C1&sc=7
+            - button "" [ref=e504]
+          - generic [ref=e506]:
+            - generic [ref=e507]: "[인턴] 제안서 작성 및 기획자 모집 (공공입찰,마케팅,SNS)"
+            - generic [ref=e508]:
+              - generic [ref=e509]:
+                - generic [ref=e510]: 학력무관
+                - generic [ref=e511]: 경력1년↑
+                - generic [ref=e512]: 서울 > 금천구
+              - generic [ref=e513]: 마케팅기획,배급·제작자,홍보
+          - generic [ref=e514]:
+            - generic [ref=e515]: ~10.14 (수)
+            - button "즉시 지원" [ref=e516]
+        - generic [ref=e519] [cursor=pointer]:
+          - button "" [ref=e520]
+          - generic [ref=e522]:
+            - link "기지커뮤니케이션즈" [ref=e523]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/23703184?Oem_Code=C1&sc=7
+            - button "" [ref=e525]
+          - generic [ref=e527]:
+            - generic [ref=e528]: 기지커뮤니케이션즈 오프라인 마케팅(BTL) 신입 및 경력사원 모집
+            - generic [ref=e529]:
+              - generic [ref=e530]:
+                - generic [ref=e531]: 대졸↑
+                - generic [ref=e532]: 신입·경력1년↑
+                - generic [ref=e533]: 서울 > 강남구
+              - generic [ref=e534]: 마케팅기획,홍보,브랜드마케터
+          - generic [ref=e535]:
+            - generic [ref=e536]: ~10.08 (목)
+            - button "즉시 지원" [ref=e537]
+        - generic [ref=e540] [cursor=pointer]:
+          - button "" [ref=e541]
+          - generic [ref=e543]:
+            - link "㈜라브" [ref=e544]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/43369359?Oem_Code=C1&sc=7
+            - button "" [ref=e546]
+          - generic [ref=e548]:
+            - generic [ref=e549]: "[라이브오랄스] 미디어커머스 콘텐츠제작자 채용"
+            - generic [ref=e550]:
+              - generic [ref=e551]:
+                - generic [ref=e552]: 학력무관
+                - generic [ref=e553]: 경력무관
+                - generic [ref=e554]: 서울 > 강남구
+              - generic [ref=e555]: 콘텐츠마케터,웹기획
+          - generic [ref=e556]:
+            - generic [ref=e557]: ~10.08 (목)
+            - button "즉시 지원" [ref=e558]
+        - generic [ref=e561] [cursor=pointer]:
+          - button "" [ref=e562]
+          - generic [ref=e564]:
+            - link "㈜메드비" [ref=e565]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/28529500?Oem_Code=C1&sc=7
+            - button "" [ref=e567]
+          - generic [ref=e569]:
+            - generic [ref=e570]: 콘텐츠 제작, SNS 운영 및 관리
+            - generic [ref=e571]:
+              - generic [ref=e572]:
+                - generic [ref=e573]: 고졸↑
+                - generic [ref=e574]: 경력무관
+                - generic [ref=e575]: 서울 > 성동구
+              - generic [ref=e576]: 콘텐츠마케터
+          - generic [ref=e577]:
+            - generic [ref=e578]: ~09.30 (수)
+            - button "즉시 지원" [ref=e579]
+        - generic [ref=e582] [cursor=pointer]:
+          - button "" [ref=e583]
+          - generic [ref=e585]:
+            - link "㈜위드컬처" [ref=e586]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/36076820?Oem_Code=C1&sc=7
+            - button "" [ref=e588]
+          - generic [ref=e590]:
+            - generic [ref=e591]: 온오프라인 신입경력 마케터 -파격적인인센티브 및 복지비
+            - generic [ref=e592]:
+              - generic [ref=e593]:
+                - generic [ref=e594]: 초대졸↑
+                - generic [ref=e595]: 경력2년↑
+                - generic [ref=e596]: 서울 > 강남구
+              - generic [ref=e597]: 마케팅기획,채널관리자,콘텐츠에디터
+          - generic [ref=e598]:
+            - generic [ref=e599]: ~10.12 (월)
+            - button "즉시 지원" [ref=e600]
+        - generic [ref=e603] [cursor=pointer]:
+          - button "" [ref=e604]
+          - generic [ref=e606]:
+            - link "㈜디메이크" [ref=e607]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/25929867?Oem_Code=C1&sc=7
+            - button "" [ref=e609]
+          - generic [ref=e611]:
+            - generic [ref=e612]: BTL 마케팅 및 프로모션 기획자 모집
+            - generic [ref=e613]:
+              - generic [ref=e614]:
+                - generic [ref=e615]: 대졸↑
+                - generic [ref=e616]: 신입·경력
+                - generic [ref=e617]: 서울 > 강남구
+              - generic [ref=e618]: 홍보,AE(광고기획자),배급·제작자
+          - generic [ref=e619]:
+            - generic [ref=e620]: ~10.14 (수)
+            - button "즉시 지원" [ref=e621]
+        - generic [ref=e624] [cursor=pointer]:
+          - button "" [ref=e625]
+          - generic [ref=e627]:
+            - link "㈜크리엠" [ref=e628]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/45100971?Oem_Code=C1&sc=7
+            - button "" [ref=e630]
+          - generic [ref=e632]:
+            - generic [ref=e633]: "[커머스/K-뷰티/이너뷰티] 콘텐츠 마케터 채용"
+            - generic [ref=e634]:
+              - generic [ref=e635]:
+                - generic [ref=e636]: 학력무관
+                - generic [ref=e637]: 경력무관
+                - generic [ref=e638]: 서울 > 서초구
+              - generic [ref=e639]: 콘텐츠마케터
+          - generic [ref=e640]:
+            - generic [ref=e641]: ~10.03 (토)
+            - button "즉시 지원" [ref=e642]
+        - generic [ref=e645] [cursor=pointer]:
+          - button "" [ref=e646]
+          - generic [ref=e648]:
+            - link "에이드크리에이티브그룹" [ref=e649]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/37426511?Oem_Code=C1&sc=7
+            - button "" [ref=e651]
+          - generic [ref=e653]:
+            - generic [ref=e654]: 오프라인 행사 기획 실무자 채용 (경력)
+            - generic [ref=e655]:
+              - generic [ref=e656]:
+                - generic [ref=e657]: 초대졸↑
+                - generic [ref=e658]: 경력1년↑
+                - generic [ref=e659]: 서울전지역, 강남구
+              - generic [ref=e660]: PL·PM·PO,브랜드마케터,온라인마케터
+          - generic [ref=e661]:
+            - generic [ref=e662]: ~10.02 (금)
+            - button "즉시 지원" [ref=e663]
+        - generic [ref=e666] [cursor=pointer]:
+          - button "" [ref=e667]
+          - generic [ref=e669]:
+            - link "㈜웜홀스튜디오" [ref=e670]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/42830035?Oem_Code=C1&sc=7
+            - button "" [ref=e672]
+          - generic [ref=e674]:
+            - generic [ref=e675]: "[신입, 경력] BTL 이벤트/행사 기획자"
+            - generic [ref=e676]:
+              - generic [ref=e677]:
+                - generic [ref=e678]: 학력무관
+                - generic [ref=e679]: 신입·경력
+                - generic [ref=e680]: 서울 > 성동구
+              - generic [ref=e681]: 브랜드마케터,홍보
+          - generic [ref=e682]:
+            - generic [ref=e683]: ~10.15 (목)
+            - button "즉시 지원" [ref=e684]
+        - generic [ref=e687] [cursor=pointer]:
+          - button "" [ref=e688]
+          - generic [ref=e690]:
+            - link "㈜식스원" [ref=e691]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/38141970?Oem_Code=C1&sc=7
+            - button "" [ref=e693]
+          - generic [ref=e695]:
+            - generic [ref=e696]: SIXONE 광고기획/광고 디자인/콘텐츠 마케팅/ MD/광고영업/인플루언서 마케팅 파트 채용
+            - generic [ref=e697]:
+              - generic [ref=e698]:
+                - generic [ref=e699]: 고졸↑
+                - generic [ref=e700]: 신입·경력
+                - generic [ref=e701]: 서울 > 강남구
+              - generic [ref=e702]: 마케팅기획,AE(광고기획자),브랜드마케터 외 11건
+          - generic [ref=e703]:
+            - generic [ref=e704]: ~10.15 (목)
+            - button "즉시 지원" [ref=e705]
+        - generic [ref=e708] [cursor=pointer]:
+          - button "" [ref=e709]
+          - generic [ref=e711]:
+            - link "㈜원디렉션엠앤씨" [ref=e712]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/34586788?Oem_Code=C1&sc=7
+            - button "" [ref=e714]
+          - generic [ref=e716]:
+            - generic [ref=e717]: "[원디렉션 엠앤씨] BTL 마케팅 기획자(경력)/ 팝업·프로모션·이벤트 전반"
+            - generic [ref=e718]:
+              - generic [ref=e719]:
+                - generic [ref=e720]: 대졸↑
+                - generic [ref=e721]: 경력3년↑
+                - generic [ref=e722]: 서울 > 서초구
+              - generic [ref=e723]: 경영·비즈니스기획,마케팅기획,AE(광고기획자)
+          - generic [ref=e724]:
+            - generic [ref=e725]: ~11.08 (일)
+            - button "즉시 지원" [ref=e726]
+        - generic [ref=e729] [cursor=pointer]:
+          - button "" [ref=e730]
+          - generic [ref=e732]:
+            - link "㈜디비투" [ref=e733]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/50398182?Oem_Code=C1&sc=7
+            - button "" [ref=e735]
+          - generic [ref=e737]:
+            - generic [ref=e738]: 퍼포먼스 마케터 채용 (DB수집 및 디자인 가능자)
+            - generic [ref=e739]:
+              - generic [ref=e740]:
+                - generic [ref=e741]: 학력무관
+                - generic [ref=e742]: 경력1년↑
+                - generic [ref=e743]: 서울 > 강남구
+              - generic [ref=e744]: 퍼포먼스마케터
+          - generic [ref=e745]:
+            - generic [ref=e746]: 상시채용
+            - button "즉시 지원" [ref=e747]
+        - generic [ref=e750] [cursor=pointer]:
+          - button "" [ref=e751]
+          - generic [ref=e753]:
+            - link "㈜팀루덴스" [ref=e754]:
+              - /url: https://www.jobkorea.co.kr/Recruit/Co_Read/C/50550368?Oem_Code=C1&sc=7
+            - button "" [ref=e756]
+          - generic [ref=e758]:
+            - generic [ref=e759]: (주)팀루덴스 BTL 기획 PM(프로젝트 매니저) 신입/경력 채용
+            - generic [ref=e760]:
+              - generic [ref=e761]:
+                - generic [ref=e762]: 초대졸↑
+                - generic [ref=e763]: 신입·경력1년↑
+                - generic [ref=e764]: 서울 > 광진구
+              - generic [ref=e765]: 홍보
+          - generic [ref=e766]:
+            - generic [ref=e767]: ~10.26 (월)
+            - button "즉시 지원" [ref=e768]
+    - complementary [ref=e771]:
+      - generic [ref=e773]:
+        - generic [ref=e774]:
+          - generic [ref=e775]: 직무
+          - generic [ref=e776]: 웹기획, 콘텐츠마케터
+        - generic [ref=e778]:
+          - generic [ref=e779]: 고용형태
+          - generic [ref=e780]: 정규직(수습 3개월)
+        - generic [ref=e782]:
+          - generic [ref=e783]: 경력
+          - generic [ref=e784]: 경력무관
+        - generic [ref=e786]:
+          - generic [ref=e787]: 급여
+          - generic [ref=e788]: 연봉 3,000만원 이상 (면접 후 결정)
+        - generic [ref=e790]:
+          - generic [ref=e791]: 근무지역
+          - generic [ref=e792]: 서울 강남구
+        - generic [ref=e794]:
+          - generic [ref=e795]: 마감일
+          - generic [ref=e796]: ~10/31(토) 채용시 마감
+        - generic [ref=e799]:
+          - button "스크랩" [ref=e800] [cursor=pointer]:
+            - generic [ref=e801]: 
+          - button "즉시 지원" [ref=e803] [cursor=pointer]
+      - link [ref=e808] [cursor=pointer]:
+        - /url: https://tacademy.skplanet.com/front/customer/viewNotice.do?seq=882&topYn=N&topYn=N&utm_source=Korcham&utm_medium=banner&utm_campaign=asac_apply&utm_id=asac&utm_content=aiDE
+        - img "T아카데미 | 스마트 ICT 전문가 양성" [ref=e809]
+    - button " TOP" [ref=e815] [cursor=pointer]:
+      - generic [ref=e816]:
+        - generic [ref=e817]: 
+        - generic [ref=e818]: TOP
+    - button "궁금해요" [ref=e810] [cursor=pointer]
+  - region "Notifications alt+T"
+  - alert [ref=e814]

@@ -63,6 +63,27 @@
     return parseInt(m[3], 10) + " " + months[idx] + " " + m[1];
   }
 
+  function fmtUsd(x, digits) {
+    if (!isNum(x)) return "not recorded";
+    var d = digits === undefined ? 2 : digits;
+    return "$" + x.toFixed(d);
+  }
+
+  function costOf(r) {
+    return (r && r.cost && isNum(r.cost.usd) && r.cost.usd > 0) ? r.cost.usd : null;
+  }
+
+  function costSourceOf(r) {
+    return (r && r.cost && typeof r.cost.source === "string") ? r.cost.source : null;
+  }
+
+  function costNote(r) {
+    var src = costSourceOf(r);
+    if (src === "reported") return " (reported)";
+    if (src === "measured") return " (measured)";
+    return "";
+  }
+
   function evidenceHref(path) {
     if (typeof path !== "string" || !path) return null;
     var p = path.replace(/^\.\//, "");
@@ -309,7 +330,7 @@
     var thead = el("thead", null);
     var hr = el("tr", null);
     hr.appendChild(el("th", { scope: "col" }, "Model / config"));
-    ["Accuracy (95% CI)", "Correct", "Invalid", "Median latency"].forEach(function (h) {
+    ["Accuracy (95% CI)", "Correct", "Invalid", "Median latency", "Cost (USD)"].forEach(function (h) {
       hr.appendChild(el("th", { scope: "col", "class": "num" }, h));
     });
     // The default tier shares one reasoning setting, shown in the caption
@@ -336,6 +357,9 @@
         isNum(inv.count) && isNum(r.total)
           ? inv.count + " (" + pct(isNum(inv.rate) ? inv.rate : inv.count / r.total) + ")" : "n/a"));
       tr.appendChild(el("td", { "class": "num" }, fmtMs((r.latency_ms || {}).median)));
+      var cost = costOf(r);
+      tr.appendChild(el("td", { "class": "num" },
+        cost === null ? "not recorded" : fmtUsd(cost) + costNote(r)));
       // In the limited/disabled tables the group heading already states the
       // setting, so the cell carries only the mode word (minimal/low/none).
       if (!hideReasoning) {
@@ -507,6 +531,155 @@
     wrap.appendChild(scrollWrap(table, firstColLabel + " values by run"));
   }
 
+  /* ---------------- cost: accuracy vs run cost ---------------- */
+
+  function pricedRuns(runs) {
+    return runs.filter(function (r) { return costOf(r) !== null; });
+  }
+
+  function renderCostChart(runs) {
+    var box = $("cost-chart");
+    if (!box) return false;
+    while (box.firstChild) box.removeChild(box.firstChild);
+    var priced = pricedRuns(runs);
+    if (!priced.length) {
+      chartError("cost-chart", "No cost recorded for provider-default runs.");
+      return false;
+    }
+    var W = 680, H = 380, padL = 58, padR = 24, padT = 14, padB = 52;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+    var minC = Infinity, maxC = 0;
+    priced.forEach(function (r) {
+      var c = costOf(r);
+      if (c < minC) minC = c;
+      if (c > maxC) maxC = c;
+    });
+    var lo = minC / 1.25, hi = maxC * 1.25;
+    function xFor(c) {
+      return padL + (Math.log(c) - Math.log(lo)) / (Math.log(hi) - Math.log(lo)) * plotW;
+    }
+    function yFor(a) {
+      return padT + (1 - Math.max(0, Math.min(1, a))) * plotH;
+    }
+
+    var svg = svgEl("svg", {
+      viewBox: "0 0 " + W + " " + H,
+      role: "presentation", "aria-hidden": "true", "font-family": "inherit"
+    });
+    svg.appendChild(svgEl("desc", null,
+      "Scatter chart of accuracy against run cost in US dollars, log scale. " +
+      priced.map(function (r) {
+        var w = r.wilson_95 || {};
+        return shortName(r) + ": " + pct(r.accuracy) + " at " + fmtUsd(costOf(r)) +
+          " (" + (costSourceOf(r) || "source not recorded") + ")" +
+          (isNum(w.lo) && isNum(w.hi)
+            ? ", 95% interval " + pct(w.lo) + " to " + pct(w.hi) : "");
+      }).join(". ")));
+
+    [0, 0.25, 0.5, 0.75, 1].forEach(function (t) {
+      var y = yFor(t);
+      svg.appendChild(svgEl("line", {
+        x1: padL, y1: y, x2: padL + plotW, y2: y, stroke: GRID, "stroke-width": 1
+      }));
+      svg.appendChild(svgEl("text", {
+        x: padL - 6, y: y + 4, "text-anchor": "end", "font-size": 11, fill: MUTED
+      }, Math.round(t * 100) + "%"));
+    });
+
+    var ticks = [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000].filter(function (v) {
+      return v >= lo && v <= hi;
+    });
+    if (!ticks.length) ticks = [lo, hi];
+    ticks.forEach(function (v) {
+      var x = xFor(v);
+      svg.appendChild(svgEl("line", {
+        x1: x, y1: padT, x2: x, y2: padT + plotH, stroke: GRID, "stroke-width": 1
+      }));
+      svg.appendChild(svgEl("text", {
+        x: x, y: padT + plotH + 16, "text-anchor": "middle", "font-size": 11, fill: MUTED
+      }, "$" + (v >= 1 ? String(v) : v.toFixed(2))));
+    });
+    svg.appendChild(svgEl("text", {
+      x: padL + plotW / 2, y: H - 8, "text-anchor": "middle", "font-size": 11, fill: MUTED
+    }, "Run cost (USD, log scale)"));
+
+    priced.forEach(function (r, i) {
+      var c = costOf(r), acc = isNum(r.accuracy) ? r.accuracy : null;
+      if (acc === null) return;
+      var x = xFor(c), y = yFor(acc);
+      var w = r.wilson_95 || {};
+      if (isNum(w.lo) && isNum(w.hi)) {
+        svg.appendChild(svgEl("line", {
+          x1: x, y1: yFor(w.hi), x2: x, y2: yFor(w.lo),
+          stroke: INK, "stroke-width": 2, "stroke-linecap": "round"
+        }));
+        [yFor(w.lo), yFor(w.hi)].forEach(function (yy) {
+          svg.appendChild(svgEl("line", {
+            x1: x - 5, y1: yy, x2: x + 5, y2: yy,
+            stroke: INK, "stroke-width": 2, "stroke-linecap": "round"
+          }));
+        });
+      }
+      // Filled marker: measured provider cost. Hollow: operator-reported.
+      svg.appendChild(svgEl("circle", costSourceOf(r) === "measured"
+        ? { cx: x, cy: y, r: 5.5, fill: ACCENT }
+        : { cx: x, cy: y, r: 5.5, fill: "#ffffff", stroke: ACCENT, "stroke-width": 2 }));
+      var label = modelBase(r);
+      if (label.length > 22) label = label.slice(0, 21) + "…";
+      // Right-edge points carry their label on the left so it never overflows;
+      // alternating vertical offsets keep neighbouring labels apart.
+      var toLeft = x > padL + plotW * 0.55;
+      var labelY = y + 4 + (i % 2 === 0 ? -14 : 14);
+      svg.appendChild(svgEl("text", {
+        x: toLeft ? x - 9 : x + 9, y: labelY,
+        "text-anchor": toLeft ? "end" : "start",
+        "font-size": 12, fill: INK
+      }, label + " — " + fmtUsd(c) + costNote(r)));
+    });
+
+    box.appendChild(svg);
+    return true;
+  }
+
+  function renderCostTable(wrapId, runs) {
+    var wrap = $(wrapId);
+    if (!wrap) return;
+    while (wrap.firstChild) wrap.removeChild(wrap.firstChild);
+    var priced = pricedRuns(runs);
+    if (!priced.length) {
+      wrap.appendChild(el("p", { "class": "small" }, "No cost recorded for these runs."));
+      return;
+    }
+    var table = el("table", null);
+    table.appendChild(el("caption", null,
+      "Exact cost: total run cost in USD, its source, cost per correct item, and accuracy."));
+    var thead = el("thead", null);
+    var hr = el("tr", null);
+    ["Run", "Cost (USD)", "Source", "$ per correct", "Accuracy (95% CI)"].forEach(function (h) {
+      hr.appendChild(el("th", { scope: "col" }, h));
+    });
+    thead.appendChild(hr);
+    table.appendChild(thead);
+    var tbody = el("tbody", null);
+    priced.forEach(function (r) {
+      var tr = el("tr", null);
+      var t = tierOf(r);
+      tr.appendChild(el("th", { scope: "row" },
+        modelBase(r) + (t !== "default" ? " [" + tierShort(t) + "]" : "")));
+      tr.appendChild(el("td", { "class": "num" }, fmtUsd(costOf(r))));
+      tr.appendChild(el("td", null, costSourceOf(r) || "not recorded"));
+      tr.appendChild(el("td", { "class": "num" },
+        (r.cost && isNum(r.cost.per_correct)) ? fmtUsd(r.cost.per_correct, 4) : "n/a"));
+      var w = r.wilson_95 || {};
+      tr.appendChild(el("td", { "class": "num" }, pct(r.accuracy) +
+        (isNum(w.lo) && isNum(w.hi)
+          ? " (" + pct(w.lo, 1) + "–" + pct(w.hi, 1) + ")" : "")));
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    wrap.appendChild(scrollWrap(table, "Exact cost values by run"));
+  }
+
   /* ---------------- reasoning comparisons ---------------- */
 
   function renderAblations(disabled, primary) {
@@ -624,6 +797,7 @@
     var hr = el("tr", null);
     hr.appendChild(el("th", { scope: "col" }, "Run"));
     hr.appendChild(el("th", { scope: "col", "class": "num" }, "Accuracy"));
+    hr.appendChild(el("th", { scope: "col", "class": "num" }, "Cost (USD)"));
     hr.appendChild(el("th", { scope: "col" }, "Reasoning"));
     hr.appendChild(el("th", { scope: "col" }, "Run date"));
     thead.appendChild(hr);
@@ -637,6 +811,9 @@
       if (t !== "default") th.appendChild(el("div", { "class": "run-id" }, tierShort(t)));
       tr.appendChild(th);
       tr.appendChild(el("td", { "class": "num" }, pct(r.accuracy)));
+      var idxCost = costOf(r);
+      tr.appendChild(el("td", { "class": "num" },
+        idxCost === null ? "not recorded" : fmtUsd(idxCost) + costNote(r)));
       tr.appendChild(el("td", null, reasoningLabel(r)));
       var d = typeof r.timestamp === "string" ? fmtDate(r.timestamp) : null;
       tr.appendChild(el("td", null, d || "not recorded"));
@@ -670,6 +847,17 @@
         ? inv.count + " (" + pct(isNum(inv.rate) ? inv.rate : inv.count / r.total) + ")" : "n/a");
       var lat = r.latency_ms || {};
       row("Latency (median / p95)", fmtMs(lat.median) + " / " + fmtMs(lat.p95));
+      var arcCost = costOf(r);
+      row("Cost", arcCost === null
+        ? "not recorded"
+        : fmtUsd(arcCost) + " (" + (costSourceOf(r) || "source not recorded") + ")" +
+          (r.cost && isNum(r.cost.per_correct)
+            ? " · " + fmtUsd(r.cost.per_correct, 4) + " per correct item" : ""));
+      if (r.usage && isNum(r.usage.prompt_tokens) && isNum(r.usage.completion_tokens)) {
+        var rt = isNum(r.usage.reasoning_tokens) ? " / " + r.usage.reasoning_tokens : "";
+        row("Tokens (prompt / completion" + (rt ? " / reasoning" : "") + ")",
+          r.usage.prompt_tokens + " / " + r.usage.completion_tokens + rt);
+      }
       row("Reasoning", reasoningLabel(r) + " — " + tierShort(tierOf(r)) + " group");
       row("Endpoint", typeof r.endpoint === "string" && r.endpoint ? r.endpoint : "not recorded");
       row("Max tokens", r.max_new_tokens !== undefined && r.max_new_tokens !== null
@@ -759,7 +947,7 @@
 
   function fail(message) {
     setStatus(message, true);
-    ["overall-chart", "domain-chart", "level-chart"].forEach(function (id) {
+    ["overall-chart", "domain-chart", "level-chart", "cost-chart"].forEach(function (id) {
       chartError(id, "Unavailable: " + message);
     });
     var box = $("findings");
@@ -800,6 +988,8 @@
         renderOverallChart(tiers.defaultRun);
         renderFindings(tiers);
         renderTierTables(tiers);
+        var okC = renderCostChart(tiers.defaultRun);
+        renderCostTable("cost-table-wrap", tiers.defaultRun);
         var chartRuns = tiers.defaultRun;
         var tableRuns = allPrimary;
         var okD = renderBreakdownChart("domain-chart", chartRuns, "by_domain", "domain");
@@ -815,6 +1005,7 @@
         var notes = [];
         if ($("domain-chart") && !okD) notes.push("domain chart unavailable");
         if ($("level-chart") && !okL) notes.push("difficulty chart unavailable");
+        if ($("cost-chart") && !okC) notes.push("cost chart unavailable");
         setStatus("Loaded " + runs.length + " configurations (" +
           tiers.defaultRun.length + " provider-default, " +
           tiers.constrained.length + " reasoning-limited, " +

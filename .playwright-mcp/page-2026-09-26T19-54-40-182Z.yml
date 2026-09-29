@@ -1,0 +1,169 @@
+- generic [ref=f8e1]:
+  - dialog "Manage Consent" [ref=f8e2]:
+    - generic [ref=f8e3]:
+      - generic [ref=f8e4]: Manage Consent
+      - button "Close dialog" [active] [ref=f8e5] [cursor=pointer]
+    - generic [ref=f8e8]: To provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions.
+    - generic [ref=f8e10]:
+      - button "Accept" [ref=f8e11] [cursor=pointer]
+      - button "Deny" [ref=f8e12] [cursor=pointer]
+      - button "View preferences" [ref=f8e13] [cursor=pointer]
+    - list [ref=f8e15]:
+      - listitem [ref=f8e16]:
+        - link "Cookie Policy" [ref=f8e17] [cursor=pointer]:
+          - /url: https://mustbethecode.com/cookie-policy/
+      - listitem [ref=f8e18]:
+        - link "Privacy Policy" [ref=f8e19] [cursor=pointer]:
+          - /url: https://mustbethecode.com/privacy-policy/
+      - listitem
+  - link "Skip to content" [ref=f8e20] [cursor=pointer]:
+    - /url: "#wp--skip-link--target"
+  - generic [ref=f8e21]:
+    - banner [ref=f8e22]:
+      - generic [ref=f8e25]:
+        - paragraph [ref=f8e26]:
+          - link "MustBeTheCode" [ref=f8e27] [cursor=pointer]:
+            - /url: https://mustbethecode.com
+        - navigation [ref=f8e29]:
+          - list [ref=f8e34]:
+            - listitem [ref=f8e35]:
+              - link "Home" [ref=f8e36] [cursor=pointer]:
+                - /url: https://mustbethecode.com/
+            - listitem [ref=f8e37]:
+              - link "About" [ref=f8e38] [cursor=pointer]:
+                - /url: https://mustbethecode.com/about/
+            - listitem [ref=f8e39]:
+              - link "Blog" [ref=f8e40] [cursor=pointer]:
+                - /url: https://mustbethecode.com/blog/
+    - main [ref=f8e41]:
+      - generic [ref=f8e42]:
+        - heading "Are Opus 5.5 and GPT-6 Sol Good at Korean?" [level=1] [ref=f8e43]
+        - generic [ref=f8e44]:
+          - paragraph [ref=f8e45]: Written by
+          - link "GWA" [ref=f8e47] [cursor=pointer]:
+            - /url: https://mustbethecode.com/author/ahndev/
+          - paragraph [ref=f8e48]: in
+          - link "Uncategorized" [ref=f8e50] [cursor=pointer]:
+            - /url: https://mustbethecode.com/category/uncategorized/
+        - generic [ref=f8e51]:
+          - paragraph [ref=f8e52]: I recently started a project which benchmarks AI model’s Korean capabilities, hoping it can help which models to choose when doing Korean test.
+          - paragraph [ref=f8e53]: And of course when I saw the release of the new models today I wanted to test them!
+          - paragraph [ref=f8e54]: So how does the results look? Lets get straight to the point.
+          - figure [ref=f8e55]:
+            - img "Bencmark results of AI models" [ref=f8e56]
+          - paragraph [ref=f8e57]: Opus 5.5 is the new leader by a tiny margin beating GPT-6 Astra. And GPT-6 Sol is basicly the same as 5.6 Sol. Lets dive deeper.
+          - figure [ref=f8e58]:
+            - table [ref=f8e59]:
+              - rowgroup [ref=f8e60]:
+                - row [ref=f8e61]:
+                  - cell "Level" [ref=f8e62]
+                  - cell "Opus 5.5" [ref=f8e63]
+                  - cell "GPT-6 Sol" [ref=f8e64]
+                - row [ref=f8e65]:
+                  - cell "1" [ref=f8e66]
+                  - cell "181/182" [ref=f8e67]
+                  - cell "180/182" [ref=f8e68]
+                - row [ref=f8e69]:
+                  - cell "2" [ref=f8e70]
+                  - cell "209/220" [ref=f8e71]
+                  - cell "207/220" [ref=f8e72]
+                - row [ref=f8e73]:
+                  - cell "3" [ref=f8e74]
+                  - cell "243/298" [ref=f8e75]
+                  - cell "216/298" [ref=f8e76]
+          - paragraph [ref=f8e77]: In level 1 and 2 both are basically equal. Level 3 made the difference. Opus was better at solving harder problems.
+          - paragraph [ref=f8e78]: The ouput itself was also interesting. Opus outputed it’s thought process and Sol just outputed the answer.
+          - paragraph [ref=f8e79]:
+            - text: And Opus does burn a lot of tokens
+            - img "😭" [ref=f8e80]
+          - figure [ref=f8e81]:
+            - table [ref=f8e82]:
+              - rowgroup [ref=f8e83]:
+                - row [ref=f8e84]:
+                  - cell "Level" [ref=f8e85]
+                  - cell "GPT-5.6 Sol" [ref=f8e86]
+                  - cell "GPT-6 Sol" [ref=f8e87]
+                - row [ref=f8e88]:
+                  - cell "1" [ref=f8e89]
+                  - cell "177/182" [ref=f8e90]
+                  - cell "180/182" [ref=f8e91]
+                - row [ref=f8e92]:
+                  - cell "2" [ref=f8e93]
+                  - cell "208/220" [ref=f8e94]
+                  - cell "207/220" [ref=f8e95]
+                - row [ref=f8e96]:
+                  - cell "3" [ref=f8e97]
+                  - cell "214/298" [ref=f8e98]
+                  - cell "216/298" [ref=f8e99]
+          - paragraph [ref=f8e100]: Compared with 5.6 there is basically no difference.
+          - paragraph [ref=f8e101]: Token effeciency did improve though. Costed a bit less than 5.6 to run the benchmark.
+          - heading "Final thoughts" [level=2] [ref=f8e102]
+          - paragraph [ref=f8e103]: Frontier model’s Korean capabilities are improving fast. Might need to find a new benchmark soon!
+          - paragraph [ref=f8e104]:
+            - text: "Project website:"
+            - link "https://friendly-blini-fe2c97.netlify.app/" [ref=f8e105] [cursor=pointer]:
+              - /url: https://friendly-blini-fe2c97.netlify.app/
+          - paragraph [ref=f8e106]:
+            - text: "Project repo:"
+            - link "https://github.com/ahndevdotcom/ko-bm" [ref=f8e107] [cursor=pointer]:
+              - /url: https://github.com/ahndevdotcom/ko-bm
+          - paragraph [ref=f8e108]:
+            - text: "Benchmark:"
+            - link "https://knlp.snu.ac.kr/research/benchmarks" [ref=f8e109] [cursor=pointer]:
+              - /url: https://knlp.snu.ac.kr/research/benchmarks
+        - navigation "Post navigation" [ref=f8e112]
+        - generic [ref=f8e113]:
+          - heading "Comments" [level=2] [ref=f8e114]
+          - generic [ref=f8e115]:
+            - heading "Leave a Reply" [level=3] [ref=f8e116]
+            - generic [ref=f8e117]:
+              - paragraph [ref=f8e118]:
+                - text: Your email address will not be published.
+                - generic [ref=f8e119]: Required fields are marked *
+              - paragraph [ref=f8e120]:
+                - generic [ref=f8e121]: Comment *
+                - textbox "Comment *" [ref=f8e122]
+              - paragraph [ref=f8e123]:
+                - generic [ref=f8e124]: Name *
+                - textbox "Name *" [ref=f8e125]
+              - paragraph [ref=f8e126]:
+                - generic [ref=f8e127]: Email *
+                - textbox "Email *" [ref=f8e128]
+              - paragraph [ref=f8e129]:
+                - generic [ref=f8e130]: Website
+                - textbox "Website" [ref=f8e131]
+              - paragraph [ref=f8e132]:
+                - button "Post Comment" [ref=f8e133] [cursor=pointer]
+      - generic [ref=f8e134]:
+        - heading "More posts" [level=2] [ref=f8e135]
+        - list [ref=f8e137]:
+          - listitem [ref=f8e138]:
+            - generic [ref=f8e139]:
+              - heading [level=3] [ref=f8e140]:
+                - link "Are Opus 5.5 and GPT-6 Sol Good at Korean?" [ref=f8e141] [cursor=pointer]:
+                  - /url: https://mustbethecode.com/are-opus-5-5-and-gpt-6-sol-good-at-korean/
+              - link [ref=f8e143] [cursor=pointer]:
+                - /url: https://mustbethecode.com/are-opus-5-5-and-gpt-6-sol-good-at-korean/
+                - time [ref=f8e144]: September 23, 2026
+    - contentinfo [ref=f8e145]:
+      - generic [ref=f8e147]:
+        - generic [ref=f8e148]:
+          - heading [level=2] [ref=f8e151]:
+            - link "MustBeTheCode" [ref=f8e152] [cursor=pointer]:
+              - /url: https://mustbethecode.com
+          - list [ref=f8e154]:
+            - listitem [ref=f8e155]:
+              - link "Mail" [ref=f8e156] [cursor=pointer]:
+                - /url: mailto:gwa@mustbethecode.com
+            - listitem [ref=f8e160]:
+              - link "GitHub" [ref=f8e161] [cursor=pointer]:
+                - /url: https://github.com/mustbethecode
+            - listitem [ref=f8e165]:
+              - link "X" [ref=f8e166] [cursor=pointer]:
+                - /url: https://x.com/mustbethecode
+        - generic [ref=f8e171]:
+          - paragraph [ref=f8e172]: Twenty Twenty-Five
+          - paragraph [ref=f8e173]:
+            - text: Designed with
+            - link "WordPress" [ref=f8e174] [cursor=pointer]:
+              - /url: https://wordpress.org

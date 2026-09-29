@@ -1,0 +1,70 @@
+- generic [active] [ref=f16e1]:
+  - link "Skip to content" [ref=f16e2] [cursor=pointer]:
+    - /url: "#wp--skip-link--target"
+  - generic [ref=f16e3]:
+    - banner [ref=f16e4]:
+      - generic [ref=f16e7]:
+        - paragraph [ref=f16e8]:
+          - link "MustBeTheCode" [ref=f16e9] [cursor=pointer]:
+            - /url: https://mustbethecode.com
+        - navigation [ref=f16e11]:
+          - button "Open menu" [ref=f16e12] [cursor=pointer]
+    - main [ref=f16e13]:
+      - generic [ref=f16e14]:
+        - paragraph [ref=f16e15]: PORTFOLIO & BLOG
+        - heading "Home" [level=1] [ref=f16e16]
+        - paragraph [ref=f16e17]: A developer portfolio and blog by GWA.
+        - generic [ref=f16e18]:
+          - paragraph [ref=f16e19]:
+            - link "Read the blog →" [ref=f16e20] [cursor=pointer]:
+              - /url: https://mustbethecode.com/blog/
+          - paragraph [ref=f16e21]:
+            - link "About →" [ref=f16e22] [cursor=pointer]:
+              - /url: https://mustbethecode.com/about/
+        - separator [ref=f16e23]
+        - generic [ref=f16e24]:
+          - heading "Projects" [level=2] [ref=f16e25]
+          - list [ref=f16e27]:
+            - listitem [ref=f16e28]:
+              - figure [ref=f16e29]:
+                - link [ref=f16e30] [cursor=pointer]:
+                  - /url: https://mustbethecode.com/project/kobalt-700-benchmark-record/
+                  - img "KoBALT-700 benchmark record" [ref=f16e31]
+              - heading "KoBALT-700 benchmark record" [level=3] [ref=f16e32]
+              - paragraph
+        - separator [ref=f16e33]
+        - generic [ref=f16e34]:
+          - paragraph [ref=f16e35]: WRITING
+          - generic [ref=f16e36]:
+            - heading "Recent posts" [level=2] [ref=f16e37]
+            - paragraph [ref=f16e38]:
+              - link "View all →" [ref=f16e39] [cursor=pointer]:
+                - /url: https://mustbethecode.com/blog/
+          - list [ref=f16e40]:
+            - listitem [ref=f16e41]:
+              - link "Are Opus 5.5 and GPT-6 Sol Good at Korean?" [ref=f16e42] [cursor=pointer]:
+                - /url: https://mustbethecode.com/are-opus-5-5-and-gpt-6-sol-good-at-korean/
+              - time [ref=f16e43]: September 23, 2026
+              - generic [ref=f16e44]: "Opus 5.5 and GPT-6 Sol tested on Korean: how the new models score on the KoBALT-700 benchmark, where they differ, and which one to pick."
+    - contentinfo [ref=f16e45]:
+      - generic [ref=f16e47]:
+        - generic [ref=f16e48]:
+          - heading [level=2] [ref=f16e51]:
+            - link "MustBeTheCode" [ref=f16e52] [cursor=pointer]:
+              - /url: https://mustbethecode.com
+          - list [ref=f16e55]:
+            - listitem [ref=f16e56]:
+              - link "Mail" [ref=f16e57] [cursor=pointer]:
+                - /url: mailto:gwa@mustbethecode.com
+            - listitem [ref=f16e61]:
+              - link "GitHub" [ref=f16e62] [cursor=pointer]:
+                - /url: https://github.com/mustbethecode
+            - listitem [ref=f16e66]:
+              - link "X" [ref=f16e67] [cursor=pointer]:
+                - /url: https://x.com/mustbethecode
+        - generic [ref=f16e72]:
+          - paragraph [ref=f16e73]: Twenty Twenty-Five
+          - paragraph [ref=f16e74]:
+            - text: Designed with
+            - link "WordPress" [ref=f16e75] [cursor=pointer]:
+              - /url: https://wordpress.org

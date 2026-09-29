@@ -1,0 +1,59 @@
+- generic [active] [ref=f17e1]:
+  - link "Skip to content" [ref=f17e2] [cursor=pointer]:
+    - /url: "#wp--skip-link--target"
+  - generic [ref=f17e3]:
+    - banner [ref=f17e4]:
+      - generic [ref=f17e7]:
+        - paragraph [ref=f17e8]:
+          - link "MustBeTheCode" [ref=f17e9] [cursor=pointer]:
+            - /url: https://mustbethecode.com
+        - navigation [ref=f17e11]:
+          - list [ref=f17e16]:
+            - listitem [ref=f17e17]:
+              - link "Home" [ref=f17e18] [cursor=pointer]:
+                - /url: https://mustbethecode.com/
+            - listitem [ref=f17e19]:
+              - link "About" [ref=f17e20] [cursor=pointer]:
+                - /url: https://mustbethecode.com/about/
+            - listitem [ref=f17e21]:
+              - link "Blog" [ref=f17e22] [cursor=pointer]:
+                - /url: https://mustbethecode.com/blog/
+    - main [ref=f17e23]:
+      - heading "Blog" [level=1] [ref=f17e24]
+      - list [ref=f17e25]:
+        - listitem [ref=f17e26]:
+          - link "RSS Feed" [ref=f17e27] [cursor=pointer]:
+            - /url: https://mustbethecode.com/feed
+      - list [ref=f17e31]:
+        - listitem [ref=f17e32]:
+          - generic [ref=f17e33]:
+            - heading [level=2] [ref=f17e34]:
+              - link "Are Opus 5.5 and GPT-6 Sol Good at Korean?" [ref=f17e35] [cursor=pointer]:
+                - /url: https://mustbethecode.com/are-opus-5-5-and-gpt-6-sol-good-at-korean/
+            - paragraph [ref=f17e37]: "Opus 5.5 and GPT-6 Sol tested on Korean: how the new models score on the KoBALT-700 benchmark, where they differ, and which one to pick."
+            - link [ref=f17e39] [cursor=pointer]:
+              - /url: https://mustbethecode.com/are-opus-5-5-and-gpt-6-sol-good-at-korean/
+              - time [ref=f17e40]: September 23, 2026
+    - contentinfo [ref=f17e42]:
+      - generic [ref=f17e44]:
+        - generic [ref=f17e45]:
+          - heading [level=2] [ref=f17e48]:
+            - link "MustBeTheCode" [ref=f17e49] [cursor=pointer]:
+              - /url: https://mustbethecode.com
+          - list [ref=f17e51]:
+            - listitem [ref=f17e52]:
+              - link "Mail" [ref=f17e53] [cursor=pointer]:
+                - /url: mailto:gwa@mustbethecode.com
+            - listitem [ref=f17e57]:
+              - link "GitHub" [ref=f17e58] [cursor=pointer]:
+                - /url: https://github.com/mustbethecode
+            - listitem [ref=f17e62]:
+              - link "X" [ref=f17e63] [cursor=pointer]:
+                - /url: https://x.com/mustbethecode
+        - generic [ref=f17e68]:
+          - paragraph [ref=f17e69]: Twenty Twenty-Five
+          - paragraph [ref=f17e70]:
+            - text: Designed with
+            - link "WordPress" [ref=f17e71] [cursor=pointer]:
+              - /url: https://wordpress.org
+  - button "Manage consent" [ref=f17e72] [cursor=pointer]

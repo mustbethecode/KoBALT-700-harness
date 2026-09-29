@@ -11,7 +11,13 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from typing import TYPE_CHECKING, Any
 
-from kobalt_eval.backends.base import AuthenticationFailed, Backend
+from kobalt_eval.backends.base import (
+    AuthenticationFailed,
+    Backend,
+    GenerationResult,
+    _as_mapping,
+    build_usage,
+)
 
 if TYPE_CHECKING:
     from kobalt_eval.config import RunConfig
@@ -27,6 +33,27 @@ def _is_transient(exc: Exception) -> bool:
     if "apierror" in name and any(code in msg for code in ("500", "502", "503", "504", "529")):
         return True
     return any(m in msg for m in _TRANSIENT_MARKERS)
+
+
+def _usage_from_response(resp: Any) -> dict[str, Any] | None:
+    """Canonical usage from an OpenAI-compatible response, or None.
+
+    OpenRouter includes ``usage.cost`` (USD credits) automatically and the
+    OpenAI SDK surfaces unknown fields via pydantic extras; dumping the
+    usage object covers both shapes.
+    """
+    data = _as_mapping(getattr(resp, "usage", None))
+    if data is None:
+        return None
+    details = _as_mapping(data.get("completion_tokens_details")) or {}
+    cost = data.get("cost")
+    return build_usage(
+        prompt_tokens=data.get("prompt_tokens"),
+        completion_tokens=data.get("completion_tokens"),
+        reasoning_tokens=details.get("reasoning_tokens"),
+        cost=cost,
+        cost_source="provider" if cost is not None else None,
+    )
 
 
 class OpenAICompatibleBackend(Backend):
@@ -82,7 +109,7 @@ class OpenAICompatibleBackend(Backend):
             kwargs["base_url"] = self.endpoint
         return OpenAI(**kwargs)
 
-    def _call_once(self, client, messages: list[dict]) -> str:
+    def _call_once(self, client, messages: list[dict]) -> GenerationResult:
         params: dict[str, Any] = {
             "model": self.model,
             "messages": messages,
@@ -94,9 +121,10 @@ class OpenAICompatibleBackend(Backend):
         params.update(self.engine_opts)
         resp = client.chat.completions.create(**params)
         try:
-            return resp.choices[0].message.content or ""
+            text = resp.choices[0].message.content or ""
         except (AttributeError, IndexError):
-            return ""
+            text = ""
+        return GenerationResult(text=text, usage=_usage_from_response(resp))
 
     def _as_auth_failed(self, exc: Exception) -> AuthenticationFailed | None:
         """Map SDK auth/permission errors to fatal AuthenticationFailed."""
@@ -113,7 +141,7 @@ class OpenAICompatibleBackend(Backend):
             )
         return None
 
-    def _generate_single(self, messages: list[dict]) -> str:
+    def _generate_single(self, messages: list[dict]) -> GenerationResult:
         client = self._client()
         last: Exception | None = None
         for attempt in range(self.max_retries + 1):
@@ -130,7 +158,7 @@ class OpenAICompatibleBackend(Backend):
         assert last is not None
         raise last
 
-    def generate(self, messages_list: list[list[dict]], config: "RunConfig") -> list[str]:
+    def generate(self, messages_list: list[list[dict]], config: "RunConfig") -> list[GenerationResult]:
         # Refresh per-run generation settings from config when provided.
         if config is not None and getattr(config, "generation", None) is not None:
             self.max_new_tokens = config.generation.max_new_tokens

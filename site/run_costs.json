@@ -1,0 +1,9 @@
+{
+  "source": "Provider dashboard totals, operator-reported (not measured per request)",
+  "note": "Applies only to runs whose records predate usage capture. Measured provider cost always wins.",
+  "costs": {
+    "run-20260922-170016-claude-opus-5.5": 14.50,
+    "run-20260920-171741-gpt-6-astra": 3.89,
+    "run-20260922-184737-gpt-6-sol": 1.81
+  }
+}

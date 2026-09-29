@@ -1,0 +1,229 @@
+- generic [active] [ref=f23e1]:
+  - generic [ref=f23e2]:
+    - generic [ref=f23e3]:
+      - generic [ref=f23e4]:
+        - paragraph [ref=f23e5]: Portfolio · 2026
+        - heading "콘텐츠 마케터" [level=1] [ref=f23e6]
+        - paragraph [ref=f23e7]: 온드미디어 운영 · 뉴스레터 · 콘텐츠 디자인
+        - generic [ref=f23e8]: 직접 만든 웹사이트를 1인으로 기획·제작·운영하며, 콘텐츠와 디자인, 데이터를 함께 다루는 지원자입니다.
+      - generic [ref=f23e9]:
+        - generic [ref=f23e10]:
+          - generic [ref=f23e11]: 지원자
+          - text: "[이름]"
+        - generic [ref=f23e12]:
+          - generic [ref=f23e13]: 이메일
+          - text: gwa@mustbethecode.com
+        - generic [ref=f23e14]:
+          - generic [ref=f23e15]: 사이트
+          - text: mustbethecode.com
+        - generic [ref=f23e16]:
+          - generic [ref=f23e17]: GitHub
+          - text: github.com/mustbethecode
+        - generic [ref=f23e18]:
+          - generic [ref=f23e19]: 채널
+          - text: X @mustbethecode (영어) · Threads @mustbethecode (한국어)
+    - generic [ref=f23e20]:
+      - generic [ref=f23e21]: 참인터랙티브 콘텐츠 마케터 지원
+      - generic [ref=f23e22]: 1 / 8
+  - generic [ref=f23e23]:
+    - paragraph [ref=f23e24]: Why me
+    - heading "세 가지로 증명합니다" [level=2] [ref=f23e25]
+    - generic [ref=f23e27]:
+      - heading "1 운영 중인 사이트가 곧 실무 경험입니다" [level=3] [ref=f23e28]:
+        - generic [ref=f23e29]: "1"
+        - text: 운영 중인 사이트가 곧 실무 경험입니다
+      - paragraph [ref=f23e30]: 워드프레스로 mustbethecode.com을 직접 구축하고, 주제 선정 → 글 작성 → 이미지 제작 → 발행 → 검색 최적화(SEO) → 성과 확인까지 혼자 운영하고 있습니다. "해봤습니다"가 아니라 "지금도 하고 있습니다"입니다.
+    - generic [ref=f23e31]:
+      - heading "2 콘텐츠를 '보기 쉽게' 만드는 일을 해봤습니다" [level=3] [ref=f23e32]:
+        - generic [ref=f23e33]: "2"
+        - text: 콘텐츠를 '보기 쉽게' 만드는 일을 해봤습니다
+      - paragraph [ref=f23e34]: 한국어 AI 벤치마크(KoBALT-700) 결과 700건을 표와 차트로 정리해, 숫자를 읽는 사람이 바로 이해할 수 있는 레퍼런스 페이지로 만들었습니다. 공고의 "광고 진행 레퍼런스 업데이트 및 관리"와 같은 종류의 작업입니다.
+    - generic [ref=f23e35]:
+      - heading "3 AI 도구를 실무에 씁니다" [level=3] [ref=f23e36]:
+        - generic [ref=f23e37]: "3"
+        - text: AI 도구를 실무에 씁니다
+      - paragraph [ref=f23e38]: 이미지·썸네일 초안, 자료 요약, 문서 정리에 AI 기반 도구를 활용합니다. 우대사항의 "AI 기반 디자인 툴"을 이미 업무 방식으로 쓰고 있습니다.
+    - generic [ref=f23e39]:
+      - generic [ref=f23e40]:
+        - generic [ref=f23e41]: "12"
+        - text: 운영 중인 페이지
+      - generic [ref=f23e42]:
+        - generic [ref=f23e43]: "700"
+        - text: 정리한 벤치마크 문항
+      - generic [ref=f23e44]:
+        - generic [ref=f23e45]: "94"
+        - text: 모바일 Lighthouse 점수
+    - generic [ref=f23e46]:
+      - generic [ref=f23e47]: 참인터랙티브 콘텐츠 마케터 지원
+      - generic [ref=f23e48]: 2 / 8
+  - generic [ref=f23e49]:
+    - paragraph [ref=f23e50]: Case Study 1
+    - heading "MustBeTheCode — 온드미디어 기획·운영" [level=2] [ref=f23e51]
+    - paragraph [ref=f23e52]: 개발자 포트폴리오 겸 블로그 · 2026년 9월 오픈 · 워드프레스 기반 1인 운영
+    - heading "내가 하는 일" [level=3] [ref=f23e54]
+    - generic [ref=f23e55]:
+      - generic [ref=f23e56]:
+        - generic [ref=f23e57]: 주제 선정
+        - text: 독자·검색 수요 기준
+      - generic [ref=f23e58]:
+        - generic [ref=f23e59]: 조사
+        - text: 자료 수집·검증
+      - generic [ref=f23e60]:
+        - generic [ref=f23e61]: 작성
+        - text: 초안 → 편집
+      - generic [ref=f23e62]:
+        - generic [ref=f23e63]: 이미지
+        - text: 썸네일·본문 컷
+      - generic [ref=f23e64]:
+        - generic [ref=f23e65]: 발행
+        - text: 워드프레스
+      - generic [ref=f23e66]:
+        - generic [ref=f23e67]: 분석
+        - text: SEO·검색 성과
+    - generic [ref=f23e68]:
+      - generic [ref=f23e69]:
+        - heading "사이트" [level=3] [ref=f23e70]
+        - paragraph [ref=f23e71]: mustbethecode.com기획·발행·운영
+      - generic [ref=f23e72]:
+        - heading "X" [level=3] [ref=f23e73]
+        - paragraph [ref=f23e74]: "@mustbethecode영어권 독자, 시작 단계"
+      - generic [ref=f23e75]:
+        - heading "Threads" [level=3] [ref=f23e76]
+        - paragraph [ref=f23e77]: "@mustbethecode한국어 독자, 시작 단계"
+    - img "MustBeTheCode 홈" [ref=f23e79]
+    - paragraph [ref=f23e80]: 홈페이지 — 콘텐츠 구조와 프로젝트 소개를 직접 구성 (데스크톱)
+    - generic [ref=f23e81]:
+      - generic [ref=f23e82]: 참인터랙티브 콘텐츠 마케터 지원
+      - generic [ref=f23e83]: 3 / 8
+  - generic [ref=f23e84]:
+    - paragraph [ref=f23e85]: Case Study 1 — 증거
+    - heading "직접 만들고, 직접 운영한 결과" [level=2] [ref=f23e86]
+    - img "블로그 목록" [ref=f23e89]
+    - paragraph [ref=f23e90]: 블로그 목록 — 발행 글과 프로젝트를 한눈에 보이도록 구성
+    - generic [ref=f23e91]:
+      - generic [ref=f23e92]:
+        - img "포스트 상세" [ref=f23e94]
+        - paragraph [ref=f23e95]: 포스트 상세 — AI 모델 비교 글 (직접 작성)
+      - generic [ref=f23e96]:
+        - img "모바일 화면" [ref=f23e98]
+        - paragraph [ref=f23e99]: 모바일 화면 — 반응형 확인
+    - generic [ref=f23e100]:
+      - generic [ref=f23e101]:
+        - heading "지금까지 (정직하게)" [level=3] [ref=f23e102]
+        - list [ref=f23e103]:
+          - listitem [ref=f23e104]: 페이지 12개 · 주요 페이지 구글 색인 완료
+          - listitem [ref=f23e105]: 검색 데이터 수집 시작 단계 (신규 사이트)
+          - listitem [ref=f23e106]: 모바일 Lighthouse 성능 94/100
+      - generic [ref=f23e107]:
+        - heading "다음 계획" [level=3] [ref=f23e108]
+        - list [ref=f23e109]:
+          - listitem [ref=f23e110]: 주 1회 발행 주기 고정 + 콘텐츠 캘린더
+          - listitem [ref=f23e111]: 채널별 성과 비교 후 확장 판단
+          - listitem [ref=f23e112]: 뉴스레터 도입 테스트
+    - generic [ref=f23e113]:
+      - generic [ref=f23e114]: 참인터랙티브 콘텐츠 마케터 지원
+      - generic [ref=f23e115]: 4 / 8
+  - generic [ref=f23e116]:
+    - paragraph [ref=f23e117]: Case Study 2
+    - heading "KoBALT-700 — 데이터를 읽히는 레퍼런스로" [level=2] [ref=f23e118]
+    - paragraph [ref=f23e119]: 한국어 능력 평가 벤치마크 (700문항 · 5개 영역) 모델별 결과 정리
+    - generic [ref=f23e121]:
+      - generic [ref=f23e122]:
+        - heading "내가 한 일" [level=3] [ref=f23e123]
+        - list [ref=f23e124]:
+          - listitem [ref=f23e125]: 700개 문항의 평가 결과 정리 (모델별 점수, 영역·난이도별 집계)
+          - listitem [ref=f23e126]: 비교 표와 차트 제작, 설명 글 작성
+          - listitem [ref=f23e127]: 페이지 구성·발행 및 근거 자료 정리
+      - generic [ref=f23e128]:
+        - heading "회사 업무와 연결되는 점" [level=3] [ref=f23e129]
+        - paragraph [ref=f23e130]: 공고의 "광고 진행 레퍼런스(프로젝트 사례) 업데이트 및 관리"와 같은 종류의 일입니다. 원본 자료를 모아 읽는 사람이 바로 이해할 수 있는 사례로 정리해봤습니다.
+    - img "KoBALT-700 개요" [ref=f23e132]
+    - paragraph [ref=f23e133]: 개요 페이지 — 목적·방법·결과 요약을 한 화면에 정리
+    - generic [ref=f23e134]:
+      - generic [ref=f23e135]:
+        - img "결과 비교 표" [ref=f23e137]
+        - paragraph [ref=f23e138]: 결과 비교 표 — 조건별 그룹, 정확도와 신뢰구간
+      - generic [ref=f23e139]:
+        - img "영역별 차트" [ref=f23e141]
+        - paragraph [ref=f23e142]: 영역별 차트 — 모델별 강약점을 바로 보이게
+    - generic [ref=f23e143]:
+      - generic [ref=f23e144]: 참인터랙티브 콘텐츠 마케터 지원
+      - generic [ref=f23e145]: 5 / 8
+  - generic [ref=f23e146]:
+    - paragraph [ref=f23e147]: Content Visuals
+    - heading "콘텐츠에 들어가는 화면과 이미지" [level=2] [ref=f23e148]
+    - generic [ref=f23e150]:
+      - generic [ref=f23e151]:
+        - img "난이도별 차트" [ref=f23e153]
+        - paragraph [ref=f23e154]: 데이터 시각화 — 난이도별 성능 비교 차트
+      - generic [ref=f23e155]:
+        - heading "이 페이지에 담는 것" [level=3] [ref=f23e156]
+        - paragraph [ref=f23e157]: 디자인 전공 포트폴리오가 아니라, 콘텐츠에 들어가는 이미지·썸네일·화면을 직접 만든 증거입니다.
+        - list [ref=f23e158]:
+          - listitem [ref=f23e159]: 웹 화면 설계·타이포그래피 (앞 페이지 스크린샷)
+          - listitem [ref=f23e160]: 데이터 차트·표 (왼쪽 이미지)
+          - listitem [ref=f23e161]: 콘텐츠용 썸네일·이미지 제작
+        - paragraph [ref=f23e162]: AI 기반 도구로 초안·편집 속도를 관리합니다.
+    - heading "직접 만든 이미지·썸네일" [level=3] [ref=f23e163]
+    - generic [ref=f23e164]: 이 자리에 직접 만든 썸네일·이미지 3~4개를 넣으세요. (없으면 지원 전에 1세트 새로 제작 — 같은 주제, 다른 톤의 썸네일 3종 추천)
+    - generic [ref=f23e165]:
+      - generic [ref=f23e166]: 참인터랙티브 콘텐츠 마케터 지원
+      - generic [ref=f23e167]: 6 / 8
+  - generic [ref=f23e168]:
+    - paragraph [ref=f23e169]: Proposal
+    - heading "뉴스레터 제안 — \"OOH 인사이드\" (가칭)" [level=2] [ref=f23e170]
+    - paragraph [ref=f23e171]: 옥외광고·마케팅 업계 뉴스 큐레이션 뉴스레터 · 격주 1회 → 반응 확인 후 주간 검토
+    - generic [ref=f23e173]:
+      - generic [ref=f23e174]:
+        - heading "독자" [level=3] [ref=f23e175]
+        - paragraph [ref=f23e176]: 브랜드 마케터·광고주, 업계 종사자
+        - heading "구성 (4개 섹션)" [level=3] [ref=f23e177]
+        - list [ref=f23e178]:
+          - listitem [ref=f23e179]: 업계 뉴스 5선 — 제목 + 2~3줄 요약 + 링크
+          - listitem [ref=f23e180]: 캠페인 해부 — 최근 옥외광고 1건 짧은 분석
+          - listitem [ref=f23e181]: 숫자로 보는 OOH — 통계 1개 + 한 줄 해석
+          - listitem [ref=f23e182]: 회사 프로젝트 — 진행 사례 자연스럽게 노출
+      - generic [ref=f23e183]:
+        - heading "제작 프로세스" [level=3] [ref=f23e184]
+        - generic [ref=f23e185]:
+          - generic [ref=f23e186]: 소스 수집
+          - generic [ref=f23e187]: AI 1차 요약
+          - generic [ref=f23e188]: 편집·검증
+          - generic [ref=f23e189]: 이미지 1컷
+          - generic [ref=f23e190]: 발송
+          - generic [ref=f23e191]: 성과 분석
+        - heading "성과 지표" [level=3] [ref=f23e192]
+        - paragraph [ref=f23e193]: 구독자 수 · 오픈율 · 클릭률 · 뉴스레터 경유 문의
+    - heading "첫 호 구성안 (샘플)" [level=3] [ref=f23e194]
+    - generic [ref=f23e195]:
+      - paragraph [ref=f23e196]: ① 업계 뉴스 5선 — [최근 옥외광고·마케팅 뉴스 실제 아이템 5개로 채우기]
+      - paragraph [ref=f23e197]: ② 캠페인 해부 — [최근 옥외광고 캠페인 1건 — 실행·반응·배울 점]
+      - paragraph [ref=f23e198]: ③ 숫자로 보는 OOH — [옥외광고 시장 통계 1개 + 출처]
+      - paragraph [ref=f23e199]: ④ 회사 프로젝트 — [참인터랙티브 진행 캠페인 중 공개 자료 1건 소개]
+    - generic [ref=f23e200]:
+      - generic [ref=f23e201]: 참인터랙티브 콘텐츠 마케터 지원
+      - generic [ref=f23e202]: 7 / 8
+  - generic [ref=f23e203]:
+    - paragraph [ref=f23e204]: Closing
+    - heading "감사합니다" [level=2] [ref=f23e205]
+    - paragraph [ref=f23e207]: 블로그와 채널을 직접 운영해봤고, 데이터를 읽기 좋은 콘텐츠로 만드는 일을 해봤습니다.
+    - paragraph [ref=f23e208]: 부족한 부분은 빠르게 배우고, 결과물로 보여드리겠습니다.
+    - generic [ref=f23e211]:
+      - generic [ref=f23e212]:
+        - generic [ref=f23e213]: 이름
+        - text: "[이름]"
+      - generic [ref=f23e214]:
+        - generic [ref=f23e215]: 이메일
+        - text: gwa@mustbethecode.com
+      - generic [ref=f23e216]:
+        - generic [ref=f23e217]: 사이트
+        - text: mustbethecode.com
+      - generic [ref=f23e218]:
+        - generic [ref=f23e219]: GitHub
+        - text: github.com/mustbethecode
+      - generic [ref=f23e220]:
+        - generic [ref=f23e221]: 채널
+        - text: X @mustbethecode · Threads @mustbethecode
+    - generic [ref=f23e222]:
+      - generic [ref=f23e223]: 참인터랙티브 콘텐츠 마케터 지원
+      - generic [ref=f23e224]: 8 / 8

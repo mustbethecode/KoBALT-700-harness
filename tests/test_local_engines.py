@@ -52,9 +52,12 @@ def test_transformers_backend_inference():
 
     cfg = _cfg_for("transformers")
     backend = TransformersBackend.from_config(cfg)
-    outputs = backend.generate([_sample_messages()], cfg)
-    assert len(outputs) == 1
-    assert isinstance(outputs[0], str)
+    results = backend.generate([_sample_messages()], cfg)
+    assert len(results) == 1
+    assert isinstance(results[0].text, str)
+    assert results[0].usage is not None
+    assert results[0].usage["prompt_tokens"] > 0
+    assert results[0].usage["completion_tokens"] >= 0
 
 
 def test_vllm_backend_constructs():
@@ -77,6 +80,8 @@ def test_vllm_backend_inference():
 
     cfg = _cfg_for("vllm")
     backend = VLLMBackend.from_config(cfg)
-    outputs = backend.generate([_sample_messages()], cfg)
-    assert len(outputs) == 1
-    assert isinstance(outputs[0], str)
+    results = backend.generate([_sample_messages()], cfg)
+    assert len(results) == 1
+    assert isinstance(results[0].text, str)
+    assert results[0].usage is not None
+    assert results[0].usage["prompt_tokens"] > 0

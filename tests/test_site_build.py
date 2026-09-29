@@ -712,3 +712,105 @@ def test_evidence_copies_only_safe_files(tmp_path):
     blob = "".join((data_dir / rel).read_text(encoding="utf-8") for rel in copied)
     assert marker not in blob
     assert "secret log stuff" not in blob
+
+
+# ---------------------------------------------------------------------------
+# cost: measured usage + reported overlay
+# ---------------------------------------------------------------------------
+
+def _results_with_cost(records, *, total_cost=2.5):
+    payload = results_for(records)
+    nc = payload["num_correct"]
+    payload["usage"] = {
+        "records_with_usage": len(records),
+        "prompt_tokens": 100 * len(records),
+        "completion_tokens": 200 * len(records),
+        "reasoning_tokens": None,
+        "total_cost": total_cost,
+        "cost_source": "provider",
+    }
+    payload["cost_per_correct"] = (total_cost / nc) if nc else None
+    return payload
+
+
+def test_cost_measured_from_results_usage(tmp_path):
+    runs = tmp_path / "runs"
+    runs.mkdir()
+    recs = three_records()  # 2 correct of 3
+    write_synthetic_run(
+        runs, "run-20260919-010203-measured", recs,
+        results_override=_results_with_cost(recs, total_cost=2.5),
+    )
+    payload = build.build_payload(runs, generated_at="2026-01-01T00:00:00Z")
+    run = payload["runs"][0]
+    assert run["cost"] == {
+        "usd": pytest.approx(2.5),
+        "per_correct": pytest.approx(1.25),
+        "source": "measured",
+    }
+    assert run["usage"]["total_cost"] == 2.5
+
+
+def test_cost_reported_overlay_used_when_measured_absent(tmp_path):
+    runs = tmp_path / "runs"
+    runs.mkdir()
+    write_synthetic_run(runs, "run-20260919-010203-reported", three_records())
+    payload = build.build_payload(
+        runs,
+        generated_at="2026-01-01T00:00:00Z",
+        cost_overlay={"run-20260919-010203-reported": 3.89},
+    )
+    run = payload["runs"][0]
+    assert run["usage"] is None
+    assert run["cost"] == {
+        "usd": pytest.approx(3.89),
+        "per_correct": pytest.approx(3.89 / 2),
+        "source": "reported",
+    }
+
+
+def test_measured_cost_wins_over_overlay(tmp_path):
+    runs = tmp_path / "runs"
+    runs.mkdir()
+    recs = three_records()
+    write_synthetic_run(
+        runs, "run-20260919-010203-both", recs,
+        results_override=_results_with_cost(recs, total_cost=1.0),
+    )
+    payload = build.build_payload(
+        runs,
+        generated_at="2026-01-01T00:00:00Z",
+        cost_overlay={"run-20260919-010203-both": 99.0},
+    )
+    assert payload["runs"][0]["cost"]["source"] == "measured"
+    assert payload["runs"][0]["cost"]["usd"] == pytest.approx(1.0)
+
+
+def test_cost_null_when_measured_and_reported_absent(tmp_path):
+    runs = tmp_path / "runs"
+    runs.mkdir()
+    write_synthetic_run(runs, "run-20260919-010203-none", three_records())
+    payload = build.build_payload(
+        runs,
+        generated_at="2026-01-01T00:00:00Z",
+        cost_overlay={"some-other-run": 5.0},
+    )
+    run = payload["runs"][0]
+    assert run["cost"] is None
+    assert run["usage"] is None
+
+
+def test_load_cost_overlay_skips_malformed_and_missing(tmp_path):
+    path = tmp_path / "run_costs.json"
+    path.write_text(
+        json.dumps({
+            "source": "operator-reported",
+            "costs": {"ok": 1.5, "string": "nope", "negative": -3, "null": None, "bool": True},
+        }),
+        encoding="utf-8",
+    )
+    assert build.load_cost_overlay(path) == {"ok": 1.5}
+
+    path.write_text("not json at all", encoding="utf-8")
+    assert build.load_cost_overlay(path) == {}
+    assert build.load_cost_overlay(tmp_path / "does-not-exist.json") == {}

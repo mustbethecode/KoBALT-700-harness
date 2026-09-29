@@ -30,7 +30,7 @@ def test_openai_sends_temperature_zero_by_default():
     backend = OpenAICompatibleBackend(model="m")
     captured: dict = {}
     out = backend._call_once(_openai_client(captured), [{"role": "user", "content": "hi"}])
-    assert out == "ok"
+    assert out.text == "ok"
     assert captured["temperature"] == 0.0
 
 
@@ -55,7 +55,7 @@ def test_anthropic_sends_temperature_zero_by_default():
             {"role": "user", "content": "hi"},
         ],
     )
-    assert out == "ok"
+    assert out.text == "ok"
     assert captured["temperature"] == 0.0
     assert captured["system"] == "sys"  # system extraction still intact
 

@@ -1,0 +1,153 @@
+- generic [active] [ref=f18e1]:
+  - link "Skip to content" [ref=f18e2] [cursor=pointer]:
+    - /url: "#wp--skip-link--target"
+  - generic [ref=f18e3]:
+    - banner [ref=f18e4]:
+      - generic [ref=f18e7]:
+        - paragraph [ref=f18e8]:
+          - link "MustBeTheCode" [ref=f18e9] [cursor=pointer]:
+            - /url: https://mustbethecode.com
+        - navigation [ref=f18e11]:
+          - list [ref=f18e16]:
+            - listitem [ref=f18e17]:
+              - link "Home" [ref=f18e18] [cursor=pointer]:
+                - /url: https://mustbethecode.com/
+            - listitem [ref=f18e19]:
+              - link "About" [ref=f18e20] [cursor=pointer]:
+                - /url: https://mustbethecode.com/about/
+            - listitem [ref=f18e21]:
+              - link "Blog" [ref=f18e22] [cursor=pointer]:
+                - /url: https://mustbethecode.com/blog/
+    - main [ref=f18e23]:
+      - generic [ref=f18e24]:
+        - heading "Are Opus 5.5 and GPT-6 Sol Good at Korean?" [level=1] [ref=f18e25]
+        - generic [ref=f18e26]:
+          - paragraph [ref=f18e27]: Written by
+          - link "GWA" [ref=f18e29] [cursor=pointer]:
+            - /url: https://mustbethecode.com/author/ahndev/
+          - paragraph [ref=f18e30]: in
+          - link "Uncategorized" [ref=f18e32] [cursor=pointer]:
+            - /url: https://mustbethecode.com/category/uncategorized/
+        - generic [ref=f18e33]:
+          - paragraph [ref=f18e34]: I recently started a project which benchmarks AI model’s Korean capabilities, hoping it can help which models to choose when doing Korean test.
+          - paragraph [ref=f18e35]: And of course when I saw the release of the new models today I wanted to test them!
+          - paragraph [ref=f18e36]: So how does the results look? Lets get straight to the point.
+          - figure [ref=f18e37]:
+            - img "Bencmark results of AI models" [ref=f18e38]
+          - paragraph [ref=f18e39]: Opus 5.5 is the new leader by a tiny margin beating GPT-6 Astra. And GPT-6 Sol is basicly the same as 5.6 Sol. Lets dive deeper.
+          - figure [ref=f18e40]:
+            - table [ref=f18e41]:
+              - rowgroup [ref=f18e42]:
+                - row [ref=f18e43]:
+                  - cell "Level" [ref=f18e44]
+                  - cell "Opus 5.5" [ref=f18e45]
+                  - cell "GPT-6 Sol" [ref=f18e46]
+                - row [ref=f18e47]:
+                  - cell "1" [ref=f18e48]
+                  - cell "181/182" [ref=f18e49]
+                  - cell "180/182" [ref=f18e50]
+                - row [ref=f18e51]:
+                  - cell "2" [ref=f18e52]
+                  - cell "209/220" [ref=f18e53]
+                  - cell "207/220" [ref=f18e54]
+                - row [ref=f18e55]:
+                  - cell "3" [ref=f18e56]
+                  - cell "243/298" [ref=f18e57]
+                  - cell "216/298" [ref=f18e58]
+          - paragraph [ref=f18e59]: In level 1 and 2 both are basically equal. Level 3 made the difference. Opus was better at solving harder problems.
+          - paragraph [ref=f18e60]: The ouput itself was also interesting. Opus outputed it’s thought process and Sol just outputed the answer.
+          - paragraph [ref=f18e61]:
+            - text: And Opus does burn a lot of tokens
+            - img "😭" [ref=f18e62]
+          - figure [ref=f18e63]:
+            - table [ref=f18e64]:
+              - rowgroup [ref=f18e65]:
+                - row [ref=f18e66]:
+                  - cell "Level" [ref=f18e67]
+                  - cell "GPT-5.6 Sol" [ref=f18e68]
+                  - cell "GPT-6 Sol" [ref=f18e69]
+                - row [ref=f18e70]:
+                  - cell "1" [ref=f18e71]
+                  - cell "177/182" [ref=f18e72]
+                  - cell "180/182" [ref=f18e73]
+                - row [ref=f18e74]:
+                  - cell "2" [ref=f18e75]
+                  - cell "208/220" [ref=f18e76]
+                  - cell "207/220" [ref=f18e77]
+                - row [ref=f18e78]:
+                  - cell "3" [ref=f18e79]
+                  - cell "214/298" [ref=f18e80]
+                  - cell "216/298" [ref=f18e81]
+          - paragraph [ref=f18e82]: Compared with 5.6 there is basically no difference.
+          - paragraph [ref=f18e83]: Token effeciency did improve though. Costed a bit less than 5.6 to run the benchmark.
+          - heading "Final thoughts" [level=2] [ref=f18e84]
+          - paragraph [ref=f18e85]: Frontier model’s Korean capabilities are improving fast. Might need to find a new benchmark soon!
+          - paragraph [ref=f18e86]:
+            - text: "Project website:"
+            - link "https://friendly-blini-fe2c97.netlify.app/" [ref=f18e87] [cursor=pointer]:
+              - /url: https://friendly-blini-fe2c97.netlify.app/
+          - paragraph [ref=f18e88]:
+            - text: "Project repo:"
+            - link "https://github.com/ahndevdotcom/ko-bm" [ref=f18e89] [cursor=pointer]:
+              - /url: https://github.com/ahndevdotcom/ko-bm
+          - paragraph [ref=f18e90]:
+            - text: "Benchmark:"
+            - link "https://knlp.snu.ac.kr/research/benchmarks" [ref=f18e91] [cursor=pointer]:
+              - /url: https://knlp.snu.ac.kr/research/benchmarks
+        - navigation "Post navigation" [ref=f18e94]
+        - generic [ref=f18e95]:
+          - heading "Comments" [level=2] [ref=f18e96]
+          - generic [ref=f18e97]:
+            - heading "Leave a Reply" [level=3] [ref=f18e98]
+            - generic [ref=f18e99]:
+              - paragraph [ref=f18e100]:
+                - text: Your email address will not be published.
+                - generic [ref=f18e101]: Required fields are marked *
+              - paragraph [ref=f18e102]:
+                - generic [ref=f18e103]: Comment *
+                - textbox "Comment *" [ref=f18e104]
+              - paragraph [ref=f18e105]:
+                - generic [ref=f18e106]: Name *
+                - textbox "Name *" [ref=f18e107]
+              - paragraph [ref=f18e108]:
+                - generic [ref=f18e109]: Email *
+                - textbox "Email *" [ref=f18e110]
+              - paragraph [ref=f18e111]:
+                - generic [ref=f18e112]: Website
+                - textbox "Website" [ref=f18e113]
+              - paragraph [ref=f18e114]:
+                - button "Post Comment" [ref=f18e115] [cursor=pointer]
+      - generic [ref=f18e116]:
+        - heading "More posts" [level=2] [ref=f18e117]
+        - list [ref=f18e119]:
+          - listitem [ref=f18e120]:
+            - generic [ref=f18e121]:
+              - heading [level=3] [ref=f18e122]:
+                - link "Are Opus 5.5 and GPT-6 Sol Good at Korean?" [ref=f18e123] [cursor=pointer]:
+                  - /url: https://mustbethecode.com/are-opus-5-5-and-gpt-6-sol-good-at-korean/
+              - link [ref=f18e125] [cursor=pointer]:
+                - /url: https://mustbethecode.com/are-opus-5-5-and-gpt-6-sol-good-at-korean/
+                - time [ref=f18e126]: September 23, 2026
+    - contentinfo [ref=f18e127]:
+      - generic [ref=f18e129]:
+        - generic [ref=f18e130]:
+          - heading [level=2] [ref=f18e133]:
+            - link "MustBeTheCode" [ref=f18e134] [cursor=pointer]:
+              - /url: https://mustbethecode.com
+          - list [ref=f18e136]:
+            - listitem [ref=f18e137]:
+              - link "Mail" [ref=f18e138] [cursor=pointer]:
+                - /url: mailto:gwa@mustbethecode.com
+            - listitem [ref=f18e142]:
+              - link "GitHub" [ref=f18e143] [cursor=pointer]:
+                - /url: https://github.com/mustbethecode
+            - listitem [ref=f18e147]:
+              - link "X" [ref=f18e148] [cursor=pointer]:
+                - /url: https://x.com/mustbethecode
+        - generic [ref=f18e153]:
+          - paragraph [ref=f18e154]: Twenty Twenty-Five
+          - paragraph [ref=f18e155]:
+            - text: Designed with
+            - link "WordPress" [ref=f18e156] [cursor=pointer]:
+              - /url: https://wordpress.org
+  - button "Manage consent" [ref=f18e157] [cursor=pointer]

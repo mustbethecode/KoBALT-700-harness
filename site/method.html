@@ -41,6 +41,7 @@
         <li><strong>Reasoning settings</strong> are the one deliberate variable: most runs use the provider default, some request minimal/low effort, and two disable reasoning. The <a href="results.html#tiers">Results</a> page keeps these groups separate.</li>
         <li><strong>Extraction and scoring:</strong> strict regular expression <code>정답은\s*(.*?)\s*입니다</code>; from each match, A–J letters are collected in order. A run is correct only if the extracted string is exactly the gold letter.</li>
         <li><strong>Invalid outputs count as wrong.</strong> A missing or malformed final-answer phrase scores 0; it is never excluded.</li>
+        <li><strong>Cost accounting:</strong> each prediction record carries token usage and, when the provider reports it (OpenRouter does, in USD), the per-request cost. Measured cost is the sum over the run. Runs made before usage capture show a dashboard-reported total instead, marked as such; the two are never mixed silently.</li>
       </ul>
     </section>
 

@@ -1,0 +1,75 @@
+- generic [ref=f12e1]:
+  - dialog "Manage Consent" [ref=f12e2]:
+    - generic [ref=f12e3]:
+      - generic [ref=f12e4]: Manage Consent
+      - button "Close dialog" [active] [ref=f12e5] [cursor=pointer]
+    - generic [ref=f12e8]: To provide the best experiences, we use technologies like cookies to store and/or access device information. Consenting to these technologies will allow us to process data such as browsing behavior or unique IDs on this site. Not consenting or withdrawing consent, may adversely affect certain features and functions.
+    - generic [ref=f12e10]:
+      - button "Accept" [ref=f12e11] [cursor=pointer]
+      - button "Deny" [ref=f12e12] [cursor=pointer]
+      - button "View preferences" [ref=f12e13] [cursor=pointer]
+    - list [ref=f12e15]:
+      - listitem [ref=f12e16]:
+        - link "Cookie Policy" [ref=f12e17] [cursor=pointer]:
+          - /url: https://mustbethecode.com/cookie-policy/
+      - listitem [ref=f12e18]:
+        - link "Privacy Policy" [ref=f12e19] [cursor=pointer]:
+          - /url: https://mustbethecode.com/privacy-policy/
+      - listitem
+  - link "Skip to content" [ref=f12e20] [cursor=pointer]:
+    - /url: "#wp--skip-link--target"
+  - generic [ref=f12e21]:
+    - banner [ref=f12e22]:
+      - generic [ref=f12e25]:
+        - paragraph [ref=f12e26]:
+          - link "MustBeTheCode" [ref=f12e27] [cursor=pointer]:
+            - /url: https://mustbethecode.com
+        - navigation [ref=f12e29]:
+          - list [ref=f12e34]:
+            - listitem [ref=f12e35]:
+              - link "Home" [ref=f12e36] [cursor=pointer]:
+                - /url: https://mustbethecode.com/
+            - listitem [ref=f12e37]:
+              - link "About" [ref=f12e38] [cursor=pointer]:
+                - /url: https://mustbethecode.com/about/
+            - listitem [ref=f12e39]:
+              - link "Blog" [ref=f12e40] [cursor=pointer]:
+                - /url: https://mustbethecode.com/blog/
+    - main [ref=f12e41]:
+      - heading "Blog" [level=1] [ref=f12e42]
+      - list [ref=f12e43]:
+        - listitem [ref=f12e44]:
+          - link "RSS Feed" [ref=f12e45] [cursor=pointer]:
+            - /url: https://mustbethecode.com/feed
+      - list [ref=f12e49]:
+        - listitem [ref=f12e50]:
+          - generic [ref=f12e51]:
+            - heading [level=2] [ref=f12e52]:
+              - link "Are Opus 5.5 and GPT-6 Sol Good at Korean?" [ref=f12e53] [cursor=pointer]:
+                - /url: https://mustbethecode.com/are-opus-5-5-and-gpt-6-sol-good-at-korean/
+            - paragraph [ref=f12e55]: "Opus 5.5 and GPT-6 Sol tested on Korean: how the new models score on the KoBALT-700 benchmark, where they differ, and which one to pick."
+            - link [ref=f12e57] [cursor=pointer]:
+              - /url: https://mustbethecode.com/are-opus-5-5-and-gpt-6-sol-good-at-korean/
+              - time [ref=f12e58]: September 23, 2026
+    - contentinfo [ref=f12e60]:
+      - generic [ref=f12e62]:
+        - generic [ref=f12e63]:
+          - heading [level=2] [ref=f12e66]:
+            - link "MustBeTheCode" [ref=f12e67] [cursor=pointer]:
+              - /url: https://mustbethecode.com
+          - list [ref=f12e69]:
+            - listitem [ref=f12e70]:
+              - link "Mail" [ref=f12e71] [cursor=pointer]:
+                - /url: mailto:gwa@mustbethecode.com
+            - listitem [ref=f12e75]:
+              - link "GitHub" [ref=f12e76] [cursor=pointer]:
+                - /url: https://github.com/mustbethecode
+            - listitem [ref=f12e80]:
+              - link "X" [ref=f12e81] [cursor=pointer]:
+                - /url: https://x.com/mustbethecode
+        - generic [ref=f12e86]:
+          - paragraph [ref=f12e87]: Twenty Twenty-Five
+          - paragraph [ref=f12e88]:
+            - text: Designed with
+            - link "WordPress" [ref=f12e89] [cursor=pointer]:
+              - /url: https://wordpress.org

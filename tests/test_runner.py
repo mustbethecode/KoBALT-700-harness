@@ -11,7 +11,7 @@ from helpers import (
     STUB_OUTPUT_NO_PHRASE,
     StubBackend,
 )
-from kobalt_eval.backends.base import Backend
+from kobalt_eval.backends.base import Backend, GenerationResult
 from kobalt_eval.config import default_run_config
 from kobalt_eval.runner import run_eval
 from kobalt_eval.scoring import score_run
@@ -58,6 +58,36 @@ def test_run_eval_produces_complete_run_dir(tmp_path, items):
     assert results["num_items"] == 3
     assert results["num_correct"] == 1
     assert results["accuracy"] == 1 / 3
+
+
+def test_usage_written_per_record_and_aggregated(tmp_path, items):
+    run_dir = tmp_path / "run-usage"
+    usages = [
+        {"prompt_tokens": 10, "completion_tokens": 20, "cost": 0.01, "cost_source": "provider"},
+        None,
+        {"prompt_tokens": 30, "completion_tokens": 40, "reasoning_tokens": 5},
+    ]
+    backend = StubBackend(
+        [STUB_OUTPUT_CORRECT_H, STUB_OUTPUT_NO_PHRASE, STUB_OUTPUT_MULTI],
+        usages=usages,
+    )
+    run_eval(_config(), run_dir, dataset_items=items, backend=backend)
+
+    records = _read_predictions(run_dir)
+    assert records[0]["usage"] == usages[0]
+    assert records[1]["usage"] is None
+    assert records[2]["usage"] == usages[2]
+
+    results = json.loads((run_dir / "results.json").read_text(encoding="utf-8"))
+    assert results["usage"] == {
+        "records_with_usage": 2,
+        "prompt_tokens": 40,
+        "completion_tokens": 60,
+        "reasoning_tokens": 5,
+        "total_cost": 0.01,
+        "cost_source": "provider",
+    }
+    assert results["cost_per_correct"] == 0.01  # 1 correct item / 3 records
 
 
 def test_resume_only_infers_missing_items(tmp_path, items):
@@ -112,7 +142,7 @@ class CrashAfterFirstBackend(Backend):
         for _ in messages_list:
             self.calls += 1
             if self.calls == 1:
-                out.append(STUB_OUTPUT_CORRECT_H)
+                out.append(GenerationResult(text=STUB_OUTPUT_CORRECT_H))
             else:
                 raise KeyboardInterrupt("simulated crash")
         return out
@@ -129,11 +159,11 @@ class FailSecondItemBackend(Backend):
         for _ in messages_list:
             self.calls += 1
             if self.calls == 1:
-                out.append(STUB_OUTPUT_CORRECT_H)
+                out.append(GenerationResult(text=STUB_OUTPUT_CORRECT_H))
             elif self.calls == 2:
                 raise RuntimeError("transient boom")
             else:
-                out.append(STUB_OUTPUT_MULTI)
+                out.append(GenerationResult(text=STUB_OUTPUT_MULTI))
         return out
 
 
@@ -178,5 +208,6 @@ def test_per_item_error_records_written_incrementally(tmp_path, items):
     by_id = {r["id"]: r for r in records}
     assert by_id[items[0]["id"]]["predicted_answer"] == "H"
     assert by_id[items[1]["id"]]["predicted_answer"] is None
+    assert by_id[items[1]["id"]]["usage"] is None
     assert "error" in by_id[items[1]["id"]]
     assert by_id[items[2]["id"]]["predicted_answer"] == "A, C"

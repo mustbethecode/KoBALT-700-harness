@@ -1,0 +1,121 @@
+- generic [active] [ref=f20e1]:
+  - link "Skip to main content" [ref=f20e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f20e3]:
+    - generic [ref=f20e4]:
+      - paragraph [ref=f20e5]:
+        - link "KoBALT-700 benchmark record" [ref=f20e6] [cursor=pointer]:
+          - /url: index.html
+      - paragraph [ref=f20e7]: Independent evaluation runs on a Korean linguistics benchmark, with evidence.
+  - navigation "Site sections" [ref=f20e8]:
+    - list [ref=f20e10]:
+      - listitem [ref=f20e11]:
+        - link "Overview" [ref=f20e12] [cursor=pointer]:
+          - /url: index.html
+      - listitem [ref=f20e13]:
+        - link "Results" [ref=f20e14] [cursor=pointer]:
+          - /url: results.html
+      - listitem [ref=f20e15]:
+        - link "Method" [ref=f20e16] [cursor=pointer]:
+          - /url: method.html
+      - listitem [ref=f20e17]:
+        - link "Runs & evidence" [ref=f20e18] [cursor=pointer]:
+          - /url: runs.html
+  - main [ref=f20e19]:
+    - generic [ref=f20e20]:
+      - heading "Overview" [level=1] [ref=f20e21]
+      - paragraph [ref=f20e22]: "KoBALT-700 is a set of 700 expert-written Korean multiple-choice items across five linguistic domains (Syntax, Semantics, Pragmatics, Phonetics/Phonology, Morphology). This record reports our own evaluation runs against it: what was tested, how, and what came out."
+      - paragraph [ref=f20e23]: 17 Sep 2026 – 22 Sep 2026 · 700 items per run · 17 configurations (12 provider-default).
+      - complementary "Important caveat" [ref=f20e24]:
+        - paragraph [ref=f20e25]:
+          - strong [ref=f20e26]: One run per configuration.
+          - text: Intervals describe item-level sampling uncertainty within these 700 items — not run-to-run repeatability, which was not measured.
+      - region [ref=f20e27]:
+        - heading "What the runs show" [level=2] [ref=f20e28]
+        - list [ref=f20e29]:
+          - listitem [ref=f20e30]:
+            - text: The highest observed score is
+            - strong [ref=f20e31]: claude-opus-5.5
+            - text: at 90.4% (95% CI 88.0%–92.4%), 633 of 700. This is the highest in this set, not a state-of-the-art claim.
+          - listitem [ref=f20e32]: "Difficulty separates the runs: on Level 3 (n=298), scores run from 11.7% (solar-mini4-preview) to 81.5% (claude-opus-5.5); every run scores lowest on Level 3."
+          - listitem [ref=f20e33]:
+            - text: "Reasoning matters more than the ranking suggests: switching gpt-5.6-luna:floor from provider-default reasoning to disabled changed accuracy from 73.3% to 49.6% (-23.7 points) on the same 700 items. See the paired comparison on the Results page."
+            - 'link "Results: reasoning comparisons" [ref=f20e34] [cursor=pointer]':
+              - /url: results.html#ablations
+      - region [ref=f20e35]:
+        - heading "Overall accuracy, provider-default runs" [level=2] [ref=f20e36]
+        - paragraph [ref=f20e37]:
+          - text: Strict exact match with 95% Wilson intervals; ten options per item, so chance is 10%. Only provider-default reasoning runs are plotted here — the comparable set. The full comparison, including reasoning-limited runs, is on the
+          - link "Results" [ref=f20e38] [cursor=pointer]:
+            - /url: results.html
+          - text: page.
+        - figure "Provider-default runs only. Axis starts at zero." [ref=f20e39]:
+          - img "Dot-and-interval chart of overall accuracy with 95 percent Wilson intervals for provider-default runs." [ref=f20e40]:
+            - img [aria-hidden] [ref=f20e41]:
+              - generic [ref=f20e42]: 0%
+              - generic [ref=f20e43]: 25%
+              - generic [ref=f20e44]: 50%
+              - generic [ref=f20e45]: 75%
+              - generic [ref=f20e46]: 100%
+              - generic [ref=f20e47]: claude-opus-5.5
+              - generic [ref=f20e49]: 90.4% (88.0%–92.4%)
+              - generic [ref=f20e50]: gpt-6-astra
+              - generic [ref=f20e52]: 90.1% (87.7%–92.1%)
+              - generic [ref=f20e53]: gpt-6-sol
+              - generic [ref=f20e55]: 86.1% (83.4%–88.5%)
+              - generic [ref=f20e56]: gpt-5.6-sol:floor
+              - generic [ref=f20e58]: 85.6% (82.8%–88.0%)
+              - generic [ref=f20e59]: gemini-3.8-flash:floor
+              - generic [ref=f20e61]: 77.6% (74.3%–80.5%)
+              - generic [ref=f20e62]: gpt-5.6-luna:floor
+              - generic [ref=f20e64]: 73.3% (69.9%–76.4%)
+              - generic [ref=f20e65]: gemma-4-31b-it
+              - generic [ref=f20e67]: 71.4% (68.0%–74.7%)
+              - generic [ref=f20e68]: gpt-6-luna
+              - generic [ref=f20e70]: 71.1% (67.7%–74.4%)
+              - generic [ref=f20e71]: gemma-4-26b-a4b-it
+              - generic [ref=f20e73]: 61.6% (57.9%–65.1%)
+              - generic [ref=f20e74]: solar-pro4
+              - generic [ref=f20e76]: 58.4% (54.7%–62.0%)
+              - generic [ref=f20e77]: solar-mini4-preview
+              - generic [ref=f20e79]: 39.9% (36.3%–43.5%)
+              - generic [ref=f20e80]: solar-mini4
+              - generic [ref=f20e82]: 38.1% (34.6%–41.8%)
+      - region [ref=f20e84]:
+        - heading "Further reading" [level=2] [ref=f20e85]
+        - list [ref=f20e86]:
+          - listitem [ref=f20e87]:
+            - link "Results" [ref=f20e88] [cursor=pointer]:
+              - /url: results.html
+            - text: — tiered comparison tables, domain and difficulty breakdowns, reasoning comparisons, reliability.
+          - listitem [ref=f20e89]:
+            - link "Method" [ref=f20e90] [cursor=pointer]:
+              - /url: method.html
+            - text: — decoding settings, the exact Korean prompt, extraction and scoring, reproduction.
+          - listitem [ref=f20e91]:
+            - link "Runs & evidence" [ref=f20e92] [cursor=pointer]:
+              - /url: runs.html
+            - text: — per-run archive with config and results files, skipped runs, full limitations.
+          - listitem [ref=f20e93]:
+            - text: "Upstream:"
+            - link "paper (arXiv:2505.16125)" [ref=f20e94] [cursor=pointer]:
+              - /url: https://arxiv.org/abs/2505.16125
+            - text: ·
+            - link "benchmark repository" [ref=f20e95] [cursor=pointer]:
+              - /url: https://github.com/snunlp/KoBALT-700
+            - text: ·
+            - link "dataset" [ref=f20e96] [cursor=pointer]:
+              - /url: https://huggingface.co/datasets/snunlp/KoBALT-700
+            - text: .
+      - region [ref=f20e97]:
+        - heading "Limitations, in brief" [level=2] [ref=f20e98]
+        - list [ref=f20e99]:
+          - listitem [ref=f20e100]: KoBALT-700 is public, so prior exposure of these items in training cannot be ruled out.
+          - listitem [ref=f20e101]: One run per configuration; close scores may not reflect a real difference.
+          - listitem [ref=f20e102]:
+            - text: Reasoning settings differ across runs — cross-setting comparisons are about configuration, not models alone. Full list on the
+            - link "Runs & evidence" [ref=f20e103] [cursor=pointer]:
+              - /url: runs.html#limitations
+            - text: page.
+  - contentinfo [ref=f20e104]:
+    - paragraph [ref=f20e106]: KoBALT-700 benchmark record. Data generated 22 Sep 2026 (UTC) from run directories via site/build.py.

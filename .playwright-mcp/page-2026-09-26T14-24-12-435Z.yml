@@ -1,0 +1,752 @@
+- generic [active] [ref=f8e1]:
+  - link "Skip to main content" [ref=f8e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f8e3]:
+    - generic [ref=f8e4]:
+      - paragraph [ref=f8e5]:
+        - link "KoBALT-700 benchmark record" [ref=f8e6] [cursor=pointer]:
+          - /url: index.html
+      - paragraph [ref=f8e7]: Independent evaluation runs on a Korean linguistics benchmark, with evidence.
+  - navigation "Site sections" [ref=f8e8]:
+    - list [ref=f8e10]:
+      - listitem [ref=f8e11]:
+        - link "Overview" [ref=f8e12] [cursor=pointer]:
+          - /url: index.html
+      - listitem [ref=f8e13]:
+        - link "Results" [ref=f8e14] [cursor=pointer]:
+          - /url: results.html
+      - listitem [ref=f8e15]:
+        - link "Method" [ref=f8e16] [cursor=pointer]:
+          - /url: method.html
+      - listitem [ref=f8e17]:
+        - link "Runs & evidence" [ref=f8e18] [cursor=pointer]:
+          - /url: runs.html
+  - main [ref=f8e19]:
+    - generic [ref=f8e20]:
+      - heading "Results" [level=1] [ref=f8e21]
+      - paragraph [ref=f8e22]: 17 Sep 2026 – 26 Sep 2026 · 700 items per run · 18 configurations (13 provider-default).
+      - status [ref=f8e23]: Loaded 18 configurations (13 provider-default, 2 reasoning-limited, 3 reasoning-disabled).
+      - region [ref=f8e24]:
+        - heading "Comparison, by reasoning group" [level=2] [ref=f8e25]
+        - paragraph [ref=f8e26]:
+          - text: Runs are grouped by provider reasoning setting because the setting changes scores substantially.
+          - strong [ref=f8e27]: The groups are not directly comparable with each other;
+          - text: "only rows within the first table share identical conditions. Accuracy is strict exact match (chance: 10%)."
+        - heading "Provider-default reasoning" [level=3] [ref=f8e28]
+        - 'region "Provider-default reasoning for every row: same harness, same prompt, provider default reasoning" [ref=f8e30]':
+          - table [ref=f8e31]:
+            - caption [ref=f8e32]: "Provider-default reasoning for every row: same harness, same prompt, provider default reasoning."
+            - rowgroup [ref=f8e33]:
+              - row [ref=f8e34]:
+                - columnheader "Model / config" [ref=f8e35]
+                - columnheader "Accuracy (95% CI)" [ref=f8e36]
+                - columnheader "Correct" [ref=f8e37]
+                - columnheader "Invalid" [ref=f8e38]
+                - columnheader "Median latency" [ref=f8e39]
+                - columnheader "Cost (USD)" [ref=f8e40]
+                - columnheader "Evidence" [ref=f8e41]
+            - rowgroup [ref=f8e42]:
+              - row [ref=f8e43]:
+                - rowheader "claude-opus-5.5" [ref=f8e44]
+                - cell "90.4% (88.0%–92.4%)" [ref=f8e45]
+                - cell "633 / 700" [ref=f8e46]
+                - cell "7 (1.0%)" [ref=f8e47]
+                - cell "9.1 s" [ref=f8e48]
+                - cell "$14.50 (reported)" [ref=f8e49]
+                - cell [ref=f8e50]:
+                  - link "Config" [ref=f8e51] [cursor=pointer]:
+                    - /url: data/runs/run-20260922-170016-claude-opus-5.5/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e52] [cursor=pointer]:
+                    - /url: data/runs/run-20260922-170016-claude-opus-5.5/results.json
+              - row [ref=f8e53]:
+                - rowheader "gpt-6-astra" [ref=f8e54]
+                - cell "90.1% (87.7%–92.1%)" [ref=f8e55]
+                - cell "631 / 700" [ref=f8e56]
+                - cell "0 (0.0%)" [ref=f8e57]
+                - cell "3.2 s" [ref=f8e58]
+                - cell "$3.89 (reported)" [ref=f8e59]
+                - cell [ref=f8e60]:
+                  - link "Config" [ref=f8e61] [cursor=pointer]:
+                    - /url: data/runs/run-20260920-171741-gpt-6-astra/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e62] [cursor=pointer]:
+                    - /url: data/runs/run-20260920-171741-gpt-6-astra/results.json
+              - row [ref=f8e63]:
+                - rowheader "gpt-6-sol" [ref=f8e64]
+                - cell "86.1% (83.4%–88.5%)" [ref=f8e65]
+                - cell "603 / 700" [ref=f8e66]
+                - cell "5 (0.7%)" [ref=f8e67]
+                - cell "3.2 s" [ref=f8e68]
+                - cell "$1.81 (reported)" [ref=f8e69]
+                - cell [ref=f8e70]:
+                  - link "Config" [ref=f8e71] [cursor=pointer]:
+                    - /url: data/runs/run-20260922-184737-gpt-6-sol/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e72] [cursor=pointer]:
+                    - /url: data/runs/run-20260922-184737-gpt-6-sol/results.json
+              - row [ref=f8e73]:
+                - rowheader "gpt-5.6-sol:floor" [ref=f8e74]
+                - cell "85.6% (82.8%–88.0%)" [ref=f8e75]
+                - cell "599 / 700" [ref=f8e76]
+                - cell "29 (4.1%)" [ref=f8e77]
+                - cell "4.9 s" [ref=f8e78]
+                - cell "not recorded" [ref=f8e79]
+                - cell [ref=f8e80]:
+                  - link "Config" [ref=f8e81] [cursor=pointer]:
+                    - /url: data/runs/run-20260919-023453-gpt-5.6-sol-floor/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e82] [cursor=pointer]:
+                    - /url: data/runs/run-20260919-023453-gpt-5.6-sol-floor/results.json
+              - row [ref=f8e83]:
+                - rowheader "gemini-3.8-flash:floor" [ref=f8e84]
+                - cell "77.6% (74.3%–80.5%)" [ref=f8e85]
+                - cell "543 / 700" [ref=f8e86]
+                - cell "117 (16.7%)" [ref=f8e87]
+                - cell "5.0 s" [ref=f8e88]
+                - cell "not recorded" [ref=f8e89]
+                - cell [ref=f8e90]:
+                  - link "Config" [ref=f8e91] [cursor=pointer]:
+                    - /url: data/runs/run-20260919-043608-gemini-3.8-flash-floor/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e92] [cursor=pointer]:
+                    - /url: data/runs/run-20260919-043608-gemini-3.8-flash-floor/results.json
+              - row [ref=f8e93]:
+                - rowheader "gpt-5.6-luna:floor" [ref=f8e94]
+                - cell "73.3% (69.9%–76.4%)" [ref=f8e95]
+                - cell "513 / 700" [ref=f8e96]
+                - cell "83 (11.9%)" [ref=f8e97]
+                - cell "9.2 s" [ref=f8e98]
+                - cell "not recorded" [ref=f8e99]
+                - cell [ref=f8e100]:
+                  - link "Config" [ref=f8e101] [cursor=pointer]:
+                    - /url: data/runs/run-20260918-162449-gpt-5.6-luna-floor/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e102] [cursor=pointer]:
+                    - /url: data/runs/run-20260918-162449-gpt-5.6-luna-floor/results.json
+              - row [ref=f8e103]:
+                - rowheader "gemma-4-31b-it" [ref=f8e104]
+                - cell "71.4% (68.0%–74.7%)" [ref=f8e105]
+                - cell "500 / 700" [ref=f8e106]
+                - cell "21 (3.0%)" [ref=f8e107]
+                - cell "15.4 s" [ref=f8e108]
+                - cell "not recorded" [ref=f8e109]
+                - cell [ref=f8e110]:
+                  - link "Config" [ref=f8e111] [cursor=pointer]:
+                    - /url: data/runs/run-20260920-072521-gemma-4-31b-it/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e112] [cursor=pointer]:
+                    - /url: data/runs/run-20260920-072521-gemma-4-31b-it/results.json
+              - row [ref=f8e113]:
+                - rowheader "gpt-6-luna" [ref=f8e114]
+                - cell "71.1% (67.7%–74.4%)" [ref=f8e115]
+                - cell "498 / 700" [ref=f8e116]
+                - cell "119 (17.0%)" [ref=f8e117]
+                - cell "6.3 s" [ref=f8e118]
+                - cell "not recorded" [ref=f8e119]
+                - cell [ref=f8e120]:
+                  - link "Config" [ref=f8e121] [cursor=pointer]:
+                    - /url: data/runs/run-20260922-184800-gpt-6-luna/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e122] [cursor=pointer]:
+                    - /url: data/runs/run-20260922-184800-gpt-6-luna/results.json
+              - row [ref=f8e123]:
+                - rowheader "gemma-4-26b-a4b-it" [ref=f8e124]
+                - cell "61.6% (57.9%–65.1%)" [ref=f8e125]
+                - cell "431 / 700" [ref=f8e126]
+                - cell "89 (12.7%)" [ref=f8e127]
+                - cell "7.4 s" [ref=f8e128]
+                - cell "not recorded" [ref=f8e129]
+                - cell [ref=f8e130]:
+                  - link "Config" [ref=f8e131] [cursor=pointer]:
+                    - /url: data/runs/run-20260920-141152-gemma-4-26b-a4b-it/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e132] [cursor=pointer]:
+                    - /url: data/runs/run-20260920-141152-gemma-4-26b-a4b-it/results.json
+              - row [ref=f8e133]:
+                - rowheader "solar-pro4" [ref=f8e134]
+                - cell "58.4% (54.7%–62.0%)" [ref=f8e135]
+                - cell "409 / 700" [ref=f8e136]
+                - cell "23 (3.3%)" [ref=f8e137]
+                - cell "7.2 s" [ref=f8e138]
+                - cell "not recorded" [ref=f8e139]
+                - cell [ref=f8e140]:
+                  - link "Config" [ref=f8e141] [cursor=pointer]:
+                    - /url: data/runs/run-20260918-125513-solar-pro4/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e142] [cursor=pointer]:
+                    - /url: data/runs/run-20260918-125513-solar-pro4/results.json
+              - row [ref=f8e143]:
+                - rowheader "solar-mini4-preview" [ref=f8e144]
+                - cell "39.9% (36.3%–43.5%)" [ref=f8e145]
+                - cell "279 / 700" [ref=f8e146]
+                - cell "173 (24.7%)" [ref=f8e147]
+                - cell "3.3 s" [ref=f8e148]
+                - cell "not recorded" [ref=f8e149]
+                - cell [ref=f8e150]:
+                  - link "Config" [ref=f8e151] [cursor=pointer]:
+                    - /url: data/runs/run-20260918-111541-solar-mini4-preview/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e152] [cursor=pointer]:
+                    - /url: data/runs/run-20260918-111541-solar-mini4-preview/results.json
+              - row [ref=f8e153]:
+                - rowheader "motif-3" [ref=f8e154]
+                - cell "39.3% (35.7%–43.0%)" [ref=f8e155]
+                - cell "275 / 700" [ref=f8e156]
+                - cell "209 (29.9%)" [ref=f8e157]
+                - cell "29.0 s" [ref=f8e158]
+                - cell "not recorded" [ref=f8e159]
+                - cell [ref=f8e160]:
+                  - link "Config" [ref=f8e161] [cursor=pointer]:
+                    - /url: data/runs/run-20260926-050318-motif-3/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e162] [cursor=pointer]:
+                    - /url: data/runs/run-20260926-050318-motif-3/results.json
+              - row [ref=f8e163]:
+                - rowheader "solar-mini4" [ref=f8e164]
+                - cell "38.1% (34.6%–41.8%)" [ref=f8e165]
+                - cell "267 / 700" [ref=f8e166]
+                - cell "115 (16.4%)" [ref=f8e167]
+                - cell "4.5 s" [ref=f8e168]
+                - cell "not recorded" [ref=f8e169]
+                - cell [ref=f8e170]:
+                  - link "Config" [ref=f8e171] [cursor=pointer]:
+                    - /url: data/runs/run-20260922-060216-solar-mini4/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e172] [cursor=pointer]:
+                    - /url: data/runs/run-20260922-060216-solar-mini4/results.json
+        - heading "Reasoning-limited (explicit minimal/low effort)" [level=3] [ref=f8e173]
+        - region "Reasoning-limited runs (explicit minimal/low effort)" [ref=f8e175]:
+          - table [ref=f8e176]:
+            - caption [ref=f8e177]: Reasoning-limited runs (explicit minimal/low effort). Same harness and prompt, but the provider was told to reason less. Not directly comparable to the rows above.
+            - rowgroup [ref=f8e178]:
+              - row [ref=f8e179]:
+                - columnheader "Model / config" [ref=f8e180]
+                - columnheader "Accuracy (95% CI)" [ref=f8e181]
+                - columnheader "Correct" [ref=f8e182]
+                - columnheader "Invalid" [ref=f8e183]
+                - columnheader "Median latency" [ref=f8e184]
+                - columnheader "Cost (USD)" [ref=f8e185]
+                - columnheader "Reasoning" [ref=f8e186]
+                - columnheader "Evidence" [ref=f8e187]
+            - rowgroup [ref=f8e188]:
+              - row [ref=f8e189]:
+                - rowheader "muse-spark-1.3-contributor" [ref=f8e190]
+                - cell "75.0% (71.7%–78.1%)" [ref=f8e191]
+                - cell "525 / 700" [ref=f8e192]
+                - cell "26 (3.7%)" [ref=f8e193]
+                - cell "10.4 s" [ref=f8e194]
+                - cell "not recorded" [ref=f8e195]
+                - cell "minimal" [ref=f8e196]
+                - cell [ref=f8e197]:
+                  - link "Config" [ref=f8e198] [cursor=pointer]:
+                    - /url: data/runs/run-20260918-165049-muse-spark-1.3-contributor/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e199] [cursor=pointer]:
+                    - /url: data/runs/run-20260918-165049-muse-spark-1.3-contributor/results.json
+              - row [ref=f8e200]:
+                - rowheader "glm-5.3" [ref=f8e201]
+                - cell "60.1% (56.5%–63.7%)" [ref=f8e202]
+                - cell "421 / 700" [ref=f8e203]
+                - cell "41 (5.9%)" [ref=f8e204]
+                - cell "5.2 s" [ref=f8e205]
+                - cell "not recorded" [ref=f8e206]
+                - cell "low" [ref=f8e207]
+                - cell [ref=f8e208]:
+                  - link "Config" [ref=f8e209] [cursor=pointer]:
+                    - /url: data/runs/run-20260920-143412-glm-5.3/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e210] [cursor=pointer]:
+                    - /url: data/runs/run-20260920-143412-glm-5.3/results.json
+        - heading "Reasoning disabled" [level=3] [ref=f8e211]
+        - region "Reasoning disabled" [ref=f8e213]:
+          - table [ref=f8e214]:
+            - caption [ref=f8e215]: Reasoning disabled. Configuration experiments; compare only within the paired panels below, not against the tables above.
+            - rowgroup [ref=f8e216]:
+              - row [ref=f8e217]:
+                - columnheader "Model / config" [ref=f8e218]
+                - columnheader "Accuracy (95% CI)" [ref=f8e219]
+                - columnheader "Correct" [ref=f8e220]
+                - columnheader "Invalid" [ref=f8e221]
+                - columnheader "Median latency" [ref=f8e222]
+                - columnheader "Cost (USD)" [ref=f8e223]
+                - columnheader "Reasoning" [ref=f8e224]
+                - columnheader "Evidence" [ref=f8e225]
+            - rowgroup [ref=f8e226]:
+              - row [ref=f8e227]:
+                - rowheader "deepseek-v4-pro-0813" [ref=f8e228]
+                - cell "60.7% (57.0%–64.3%)" [ref=f8e229]
+                - cell "425 / 700" [ref=f8e230]
+                - cell "2 (0.3%)" [ref=f8e231]
+                - cell "7.0 s" [ref=f8e232]
+                - cell "not recorded" [ref=f8e233]
+                - cell "none" [ref=f8e234]
+                - cell [ref=f8e235]:
+                  - link "Config" [ref=f8e236] [cursor=pointer]:
+                    - /url: data/runs/run-20260920-143031-deepseek-v4-pro-0813/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e237] [cursor=pointer]:
+                    - /url: data/runs/run-20260920-143031-deepseek-v4-pro-0813/results.json
+              - row [ref=f8e238]:
+                - rowheader "gemma-4-26B-A4B-it-qat-GGUF" [ref=f8e239]
+                - cell "58.7% (55.0%–62.3%)" [ref=f8e240]
+                - cell "411 / 700" [ref=f8e241]
+                - cell "103 (14.7%)" [ref=f8e242]
+                - cell "77.0 s" [ref=f8e243]
+                - cell "not recorded" [ref=f8e244]
+                - cell "none" [ref=f8e245]
+                - cell [ref=f8e246]:
+                  - link "Config" [ref=f8e247] [cursor=pointer]:
+                    - /url: data/runs/run-20260917-032809-gemma-4-26B-A4B-it-qat-GGUF/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e248] [cursor=pointer]:
+                    - /url: data/runs/run-20260917-032809-gemma-4-26B-A4B-it-qat-GGUF/results.json
+              - row [ref=f8e249]:
+                - rowheader "gpt-5.6-luna:floor" [ref=f8e250]
+                - cell "49.6% (45.9%–53.3%)" [ref=f8e251]
+                - cell "347 / 700" [ref=f8e252]
+                - cell "0 (0.0%)" [ref=f8e253]
+                - cell "1.9 s" [ref=f8e254]
+                - cell "not recorded" [ref=f8e255]
+                - cell "none" [ref=f8e256]
+                - cell [ref=f8e257]:
+                  - link "Config" [ref=f8e258] [cursor=pointer]:
+                    - /url: data/runs/run-20260919-015306-gpt-5.6-luna-floor/config.snapshot.yaml
+                  - text: ·
+                  - link "Results" [ref=f8e259] [cursor=pointer]:
+                    - /url: data/runs/run-20260919-015306-gpt-5.6-luna-floor/results.json
+      - region [ref=f8e260]:
+        - heading "Cost" [level=2] [ref=f8e261]
+        - paragraph [ref=f8e262]:
+          - text: "Provider-default runs with a known cost. Cost is a property of the run configuration and endpoint, not intrinsic to the model: provider routing, quantization, repeated retries, and the reasoning budget all change it."
+          - strong [ref=f8e263]: Measured
+          - text: cost is summed from per-request usage reported by the provider;
+          - strong [ref=f8e264]: reported
+          - text: cost is a dashboard total for runs made before usage capture, and covers only the completed run — retries and abandoned partial runs are not included.
+        - 'figure "Horizontal axis: run cost, USD, log scale. Vertical bars: 95% Wilson intervals. Filled markers are measured cost; hollow markers are reported." [ref=f8e265]':
+          - img "Scatter chart of accuracy against run cost in US dollars (log scale) for provider-default runs. Exact values are in the table below." [ref=f8e266]:
+            - img [aria-hidden] [ref=f8e267]:
+              - generic [ref=f8e268]: 0%
+              - generic [ref=f8e269]: 25%
+              - generic [ref=f8e270]: 50%
+              - generic [ref=f8e271]: 75%
+              - generic [ref=f8e272]: 100%
+              - generic [ref=f8e273]: $2
+              - generic [ref=f8e274]: $5
+              - generic [ref=f8e275]: $10
+              - generic [ref=f8e276]: Run cost (USD, log scale)
+              - generic [ref=f8e278]: claude-opus-5.5 — $14.50 (reported)
+              - generic [ref=f8e280]: gpt-6-astra — $3.89 (reported)
+              - generic [ref=f8e282]: gpt-6-sol — $1.81 (reported)
+        - group [ref=f8e284]:
+          - generic "Exact cost values" [ref=f8e285] [cursor=pointer]
+      - region [ref=f8e286]:
+        - heading "By domain" [level=2] [ref=f8e287]
+        - paragraph [ref=f8e288]: "Five linguistic domains. Small domains are noisier (Morphology: 42 items; Syntax: 300). Charts show provider-default runs; tables include reasoning-limited runs, marked."
+        - figure "Provider-default runs. Group labels include item counts." [ref=f8e289]:
+          - img "Bar chart of accuracy by linguistic domain for provider-default runs. Exact values are in the table below." [ref=f8e290]:
+            - img [aria-hidden] [ref=f8e291]:
+              - generic [ref=f8e292]: claude-opus-5.5
+              - generic [ref=f8e293]: Morphology (n=42)
+              - generic [ref=f8e296]: 97.6%
+              - generic [ref=f8e297]: Phonetics/Phonology (n=62)
+              - generic [ref=f8e300]: 93.5%
+              - generic [ref=f8e301]: Pragmatics (n=81)
+              - generic [ref=f8e304]: 93.8%
+              - generic [ref=f8e305]: Semantics (n=215)
+              - generic [ref=f8e308]: 85.6%
+              - generic [ref=f8e309]: Syntax (n=300)
+              - generic [ref=f8e312]: 91.3%
+              - generic [ref=f8e313]: gpt-6-astra
+              - generic [ref=f8e314]: Morphology (n=42)
+              - generic [ref=f8e317]: 97.6%
+              - generic [ref=f8e318]: Phonetics/Phonology (n=62)
+              - generic [ref=f8e321]: 91.9%
+              - generic [ref=f8e322]: Pragmatics (n=81)
+              - generic [ref=f8e325]: 96.3%
+              - generic [ref=f8e326]: Semantics (n=215)
+              - generic [ref=f8e329]: 83.7%
+              - generic [ref=f8e330]: Syntax (n=300)
+              - generic [ref=f8e333]: 91.7%
+              - generic [ref=f8e334]: gpt-6-sol
+              - generic [ref=f8e335]: Morphology (n=42)
+              - generic [ref=f8e338]: 85.7%
+              - generic [ref=f8e339]: Phonetics/Phonology (n=62)
+              - generic [ref=f8e342]: 83.9%
+              - generic [ref=f8e343]: Pragmatics (n=81)
+              - generic [ref=f8e346]: 90.1%
+              - generic [ref=f8e347]: Semantics (n=215)
+              - generic [ref=f8e350]: 80.0%
+              - generic [ref=f8e351]: Syntax (n=300)
+              - generic [ref=f8e354]: 90.0%
+              - generic [ref=f8e355]: gpt-5.6-sol:floor
+              - generic [ref=f8e356]: Morphology (n=42)
+              - generic [ref=f8e359]: 78.6%
+              - generic [ref=f8e360]: Phonetics/Phonology (n=62)
+              - generic [ref=f8e363]: 88.7%
+              - generic [ref=f8e364]: Pragmatics (n=81)
+              - generic [ref=f8e367]: 87.7%
+              - generic [ref=f8e368]: Semantics (n=215)
+              - generic [ref=f8e371]: 80.9%
+              - generic [ref=f8e372]: Syntax (n=300)
+              - generic [ref=f8e375]: 88.7%
+              - generic [ref=f8e376]: gemini-3.8-flash:floor
+              - generic [ref=f8e377]: Morphology (n=42)
+              - generic [ref=f8e380]: 76.2%
+              - generic [ref=f8e381]: Phonetics/Phonology (n=62)
+              - generic [ref=f8e384]: 80.6%
+              - generic [ref=f8e385]: Pragmatics (n=81)
+              - generic [ref=f8e388]: 81.5%
+              - generic [ref=f8e389]: Semantics (n=215)
+              - generic [ref=f8e392]: 76.7%
+              - generic [ref=f8e393]: Syntax (n=300)
+              - generic [ref=f8e396]: 76.7%
+              - generic [ref=f8e397]: gpt-5.6-luna:floor
+              - generic [ref=f8e398]: Morphology (n=42)
+              - generic [ref=f8e401]: 69.0%
+              - generic [ref=f8e402]: Phonetics/Phonology (n=62)
+              - generic [ref=f8e405]: 72.6%
+              - generic [ref=f8e406]: Pragmatics (n=81)
+              - generic [ref=f8e409]: 64.2%
+              - generic [ref=f8e410]: Semantics (n=215)
+              - generic [ref=f8e413]: 74.9%
+              - generic [ref=f8e414]: Syntax (n=300)
+              - generic [ref=f8e417]: 75.3%
+              - generic [ref=f8e418]: gemma-4-31b-it
+              - generic [ref=f8e419]: Morphology (n=42)
+              - generic [ref=f8e422]: 54.8%
+              - generic [ref=f8e423]: Phonetics/Phonology (n=62)
+              - generic [ref=f8e426]: 58.1%
+              - generic [ref=f8e427]: Pragmatics (n=81)
+              - generic [ref=f8e430]: 64.2%
+              - generic [ref=f8e431]: Semantics (n=215)
+              - generic [ref=f8e434]: 73.0%
+              - generic [ref=f8e435]: Syntax (n=300)
+              - generic [ref=f8e438]: 77.3%
+              - generic [ref=f8e439]: gpt-6-luna
+              - generic [ref=f8e440]: Morphology (n=42)
+              - generic [ref=f8e443]: 69.0%
+              - generic [ref=f8e444]: Phonetics/Phonology (n=62)
+              - generic [ref=f8e447]: 75.8%
+              - generic [ref=f8e448]: Pragmatics (n=81)
+              - generic [ref=f8e451]: 70.4%
+              - generic [ref=f8e452]: Semantics (n=215)
+              - generic [ref=f8e455]: 71.6%
+              - generic [ref=f8e456]: Syntax (n=300)
+              - generic [ref=f8e459]: 70.3%
+              - generic [ref=f8e460]: gemma-4-26b-a4b-it
+              - generic [ref=f8e461]: Morphology (n=42)
+              - generic [ref=f8e464]: 45.2%
+              - generic [ref=f8e465]: Phonetics/Phonology (n=62)
+              - generic [ref=f8e468]: 48.4%
+              - generic [ref=f8e469]: Pragmatics (n=81)
+              - generic [ref=f8e472]: 50.6%
+              - generic [ref=f8e473]: Semantics (n=215)
+              - generic [ref=f8e476]: 69.3%
+              - generic [ref=f8e477]: Syntax (n=300)
+              - generic [ref=f8e480]: 64.0%
+              - generic [ref=f8e481]: solar-pro4
+              - generic [ref=f8e482]: Morphology (n=42)
+              - generic [ref=f8e485]: 54.8%
+              - generic [ref=f8e486]: Phonetics/Phonology (n=62)
+              - generic [ref=f8e489]: 33.9%
+              - generic [ref=f8e490]: Pragmatics (n=81)
+              - generic [ref=f8e493]: 48.1%
+              - generic [ref=f8e494]: Semantics (n=215)
+              - generic [ref=f8e497]: 64.2%
+              - generic [ref=f8e498]: Syntax (n=300)
+              - generic [ref=f8e501]: 62.7%
+              - generic [ref=f8e502]: solar-mini4-preview
+              - generic [ref=f8e503]: Morphology (n=42)
+              - generic [ref=f8e506]: 21.4%
+              - generic [ref=f8e507]: Phonetics/Phonology (n=62)
+              - generic [ref=f8e510]: 22.6%
+              - generic [ref=f8e511]: Pragmatics (n=81)
+              - generic [ref=f8e514]: 21.0%
+              - generic [ref=f8e515]: Semantics (n=215)
+              - generic [ref=f8e518]: 54.0%
+              - generic [ref=f8e519]: Syntax (n=300)
+              - generic [ref=f8e522]: 41.0%
+              - generic [ref=f8e523]: motif-3
+              - generic [ref=f8e524]: Morphology (n=42)
+              - generic [ref=f8e527]: 21.4%
+              - generic [ref=f8e528]: Phonetics/Phonology (n=62)
+              - generic [ref=f8e531]: 12.9%
+              - generic [ref=f8e532]: Pragmatics (n=81)
+              - generic [ref=f8e535]: 34.6%
+              - generic [ref=f8e536]: Semantics (n=215)
+              - generic [ref=f8e539]: 51.2%
+              - generic [ref=f8e540]: Syntax (n=300)
+              - generic [ref=f8e543]: 40.0%
+              - generic [ref=f8e544]: solar-mini4
+              - generic [ref=f8e545]: Morphology (n=42)
+              - generic [ref=f8e548]: 21.4%
+              - generic [ref=f8e549]: Phonetics/Phonology (n=62)
+              - generic [ref=f8e552]: 19.4%
+              - generic [ref=f8e553]: Pragmatics (n=81)
+              - generic [ref=f8e556]: 27.2%
+              - generic [ref=f8e557]: Semantics (n=215)
+              - generic [ref=f8e560]: 54.0%
+              - generic [ref=f8e561]: Syntax (n=300)
+              - generic [ref=f8e564]: 36.0%
+        - group [ref=f8e566]:
+          - generic "Exact domain values" [ref=f8e567] [cursor=pointer]
+      - region [ref=f8e568]:
+        - heading "By difficulty" [level=2] [ref=f8e569]
+        - paragraph [ref=f8e570]: "Level 1: 182 items; Level 2: 220; Level 3: 298. Charts show provider-default runs; tables include reasoning-limited runs, marked."
+        - figure "Provider-default runs. Group labels include item counts." [ref=f8e571]:
+          - img "Bar chart of accuracy by difficulty level for provider-default runs. Exact values are in the table below." [ref=f8e572]:
+            - img [aria-hidden] [ref=f8e573]:
+              - generic [ref=f8e574]: claude-opus-5.5
+              - generic [ref=f8e575]: 1 (n=182)
+              - generic [ref=f8e578]: 99.5%
+              - generic [ref=f8e579]: 2 (n=220)
+              - generic [ref=f8e582]: 95.0%
+              - generic [ref=f8e583]: 3 (n=298)
+              - generic [ref=f8e586]: 81.5%
+              - generic [ref=f8e587]: gpt-6-astra
+              - generic [ref=f8e588]: 1 (n=182)
+              - generic [ref=f8e591]: 99.5%
+              - generic [ref=f8e592]: 2 (n=220)
+              - generic [ref=f8e595]: 95.9%
+              - generic [ref=f8e596]: 3 (n=298)
+              - generic [ref=f8e599]: 80.2%
+              - generic [ref=f8e600]: gpt-6-sol
+              - generic [ref=f8e601]: 1 (n=182)
+              - generic [ref=f8e604]: 98.9%
+              - generic [ref=f8e605]: 2 (n=220)
+              - generic [ref=f8e608]: 94.1%
+              - generic [ref=f8e609]: 3 (n=298)
+              - generic [ref=f8e612]: 72.5%
+              - generic [ref=f8e613]: gpt-5.6-sol:floor
+              - generic [ref=f8e614]: 1 (n=182)
+              - generic [ref=f8e617]: 97.3%
+              - generic [ref=f8e618]: 2 (n=220)
+              - generic [ref=f8e621]: 94.5%
+              - generic [ref=f8e622]: 3 (n=298)
+              - generic [ref=f8e625]: 71.8%
+              - generic [ref=f8e626]: gemini-3.8-flash:floor
+              - generic [ref=f8e627]: 1 (n=182)
+              - generic [ref=f8e630]: 96.7%
+              - generic [ref=f8e631]: 2 (n=220)
+              - generic [ref=f8e634]: 85.5%
+              - generic [ref=f8e635]: 3 (n=298)
+              - generic [ref=f8e638]: 60.1%
+              - generic [ref=f8e639]: gpt-5.6-luna:floor
+              - generic [ref=f8e640]: 1 (n=182)
+              - generic [ref=f8e643]: 95.6%
+              - generic [ref=f8e644]: 2 (n=220)
+              - generic [ref=f8e647]: 85.0%
+              - generic [ref=f8e648]: 3 (n=298)
+              - generic [ref=f8e651]: 51.0%
+              - generic [ref=f8e652]: gemma-4-31b-it
+              - generic [ref=f8e653]: 1 (n=182)
+              - generic [ref=f8e656]: 96.2%
+              - generic [ref=f8e657]: 2 (n=220)
+              - generic [ref=f8e660]: 85.9%
+              - generic [ref=f8e661]: 3 (n=298)
+              - generic [ref=f8e664]: 45.6%
+              - generic [ref=f8e665]: gpt-6-luna
+              - generic [ref=f8e666]: 1 (n=182)
+              - generic [ref=f8e669]: 95.6%
+              - generic [ref=f8e670]: 2 (n=220)
+              - generic [ref=f8e673]: 82.3%
+              - generic [ref=f8e674]: 3 (n=298)
+              - generic [ref=f8e677]: 48.0%
+              - generic [ref=f8e678]: gemma-4-26b-a4b-it
+              - generic [ref=f8e679]: 1 (n=182)
+              - generic [ref=f8e682]: 96.7%
+              - generic [ref=f8e683]: 2 (n=220)
+              - generic [ref=f8e686]: 70.0%
+              - generic [ref=f8e687]: 3 (n=298)
+              - generic [ref=f8e690]: 33.9%
+              - generic [ref=f8e691]: solar-pro4
+              - generic [ref=f8e692]: 1 (n=182)
+              - generic [ref=f8e695]: 90.1%
+              - generic [ref=f8e696]: 2 (n=220)
+              - generic [ref=f8e699]: 72.7%
+              - generic [ref=f8e700]: 3 (n=298)
+              - generic [ref=f8e703]: 28.5%
+              - generic [ref=f8e704]: solar-mini4-preview
+              - generic [ref=f8e705]: 1 (n=182)
+              - generic [ref=f8e708]: 78.6%
+              - generic [ref=f8e709]: 2 (n=220)
+              - generic [ref=f8e712]: 45.9%
+              - generic [ref=f8e713]: 3 (n=298)
+              - generic [ref=f8e716]: 11.7%
+              - generic [ref=f8e717]: motif-3
+              - generic [ref=f8e718]: 1 (n=182)
+              - generic [ref=f8e721]: 74.7%
+              - generic [ref=f8e722]: 2 (n=220)
+              - generic [ref=f8e725]: 46.4%
+              - generic [ref=f8e726]: 3 (n=298)
+              - generic [ref=f8e729]: 12.4%
+              - generic [ref=f8e730]: solar-mini4
+              - generic [ref=f8e731]: 1 (n=182)
+              - generic [ref=f8e734]: 78.6%
+              - generic [ref=f8e735]: 2 (n=220)
+              - generic [ref=f8e738]: 37.7%
+              - generic [ref=f8e739]: 3 (n=298)
+              - generic [ref=f8e742]: 13.8%
+        - group [ref=f8e744]:
+          - generic "Exact difficulty values" [ref=f8e745] [cursor=pointer]
+      - region [ref=f8e746]:
+        - heading "Reasoning comparisons" [level=2] [ref=f8e747]
+        - paragraph [ref=f8e748]: Paired runs of the same model under different reasoning settings. Unpaired observations are labeled as such — they show where a configuration landed, not what the setting changed.
+        - generic [ref=f8e749]:
+          - generic [ref=f8e750]:
+            - 'heading "gpt-5.6-luna:floor (reasoning effort: none)" [level=3] [ref=f8e751]'
+            - paragraph [ref=f8e752]: 73.3% → 49.6% (-23.7 points)
+            - paragraph [ref=f8e753]: Same model, same 700 items; only the provider reasoning setting changed (provider default → disabled). Disabling reasoning lowered accuracy by 23.7 points. A configuration result, not a model rank.
+            - paragraph [ref=f8e754]: median latency 9.2 s → 1.9 s; invalid outputs 83 → 0 of 700.
+            - paragraph [ref=f8e755]:
+              - link "Config" [ref=f8e756] [cursor=pointer]:
+                - /url: data/runs/run-20260919-015306-gpt-5.6-luna-floor/config.snapshot.yaml
+              - text: ·
+              - link "Results" [ref=f8e757] [cursor=pointer]:
+                - /url: data/runs/run-20260919-015306-gpt-5.6-luna-floor/results.json
+          - generic [ref=f8e758]:
+            - 'heading "deepseek-v4-pro-0813 (reasoning effort: none)" [level=3] [ref=f8e759]'
+            - paragraph [ref=f8e760]: "Accuracy 60.7% with reasoning disabled (425 of 700). There is no provider-default run of this model in the current data, so this stands as an unpaired observation: it cannot show what disabling reasoning changed, only where this configuration landed."
+            - paragraph [ref=f8e761]:
+              - link "Config" [ref=f8e762] [cursor=pointer]:
+                - /url: data/runs/run-20260920-143031-deepseek-v4-pro-0813/config.snapshot.yaml
+              - text: ·
+              - link "Results" [ref=f8e763] [cursor=pointer]:
+                - /url: data/runs/run-20260920-143031-deepseek-v4-pro-0813/results.json
+          - generic [ref=f8e764]:
+            - heading "gemma-4-26B-A4B-it-qat-GGUF (reasoning disabled)" [level=3] [ref=f8e765]
+            - paragraph [ref=f8e766]: "Accuracy 58.7% with reasoning disabled (411 of 700). There is no provider-default run of this model in the current data, so this stands as an unpaired observation: it cannot show what disabling reasoning changed, only where this configuration landed."
+            - paragraph [ref=f8e767]:
+              - link "Config" [ref=f8e768] [cursor=pointer]:
+                - /url: data/runs/run-20260917-032809-gemma-4-26B-A4B-it-qat-GGUF/config.snapshot.yaml
+              - text: ·
+              - link "Results" [ref=f8e769] [cursor=pointer]:
+                - /url: data/runs/run-20260917-032809-gemma-4-26B-A4B-it-qat-GGUF/results.json
+      - region [ref=f8e770]:
+        - heading "Reliability" [level=2] [ref=f8e771]
+        - paragraph [ref=f8e772]:
+          - text: Invalid means no single A–J choice could be extracted; invalid outputs count as wrong. Latency depends on the endpoint and deployment behind each run and
+          - strong [ref=f8e773]: should not be read as intrinsic model speed
+          - text: .
+        - region "Invalid outputs and latency by run" [ref=f8e775]:
+          - table [ref=f8e776]:
+            - caption [ref=f8e777]: Invalid outputs and latency per run. Latency reflects the endpoint used, not the model itself.
+            - rowgroup [ref=f8e778]:
+              - row [ref=f8e779]:
+                - columnheader "Run" [ref=f8e780]
+                - columnheader "Invalid" [ref=f8e781]
+                - columnheader "Empty outputs" [ref=f8e782]
+                - columnheader "Median latency" [ref=f8e783]
+                - columnheader "p95 latency" [ref=f8e784]
+            - rowgroup [ref=f8e785]:
+              - row [ref=f8e786]:
+                - rowheader "claude-opus-5.5" [ref=f8e787]
+                - cell "7 / 700 (1.0%)" [ref=f8e788]
+                - cell "0 / 700" [ref=f8e789]
+                - cell "9.1 s" [ref=f8e790]
+                - cell "18.7 s" [ref=f8e791]
+              - row [ref=f8e792]:
+                - rowheader "gpt-6-astra" [ref=f8e793]
+                - cell "0 / 700 (0.0%)" [ref=f8e794]
+                - cell "0 / 700" [ref=f8e795]
+                - cell "3.2 s" [ref=f8e796]
+                - cell "8.3 s" [ref=f8e797]
+              - row [ref=f8e798]:
+                - rowheader "gpt-6-sol" [ref=f8e799]
+                - cell "5 / 700 (0.7%)" [ref=f8e800]
+                - cell "5 / 700" [ref=f8e801]
+                - cell "3.2 s" [ref=f8e802]
+                - cell "11.5 s" [ref=f8e803]
+              - row [ref=f8e804]:
+                - rowheader "gpt-5.6-sol:floor" [ref=f8e805]
+                - cell "29 / 700 (4.1%)" [ref=f8e806]
+                - cell "29 / 700" [ref=f8e807]
+                - cell "4.9 s" [ref=f8e808]
+                - cell "23.3 s" [ref=f8e809]
+              - row [ref=f8e810]:
+                - rowheader "gemini-3.8-flash:floor" [ref=f8e811]
+                - cell "117 / 700 (16.7%)" [ref=f8e812]
+                - cell "6 / 700" [ref=f8e813]
+                - cell "5.0 s" [ref=f8e814]
+                - cell "9.3 s" [ref=f8e815]
+              - row [ref=f8e816]:
+                - rowheader "muse-spark-1.3-contributor [reasoning-limited]" [ref=f8e817]
+                - cell "26 / 700 (3.7%)" [ref=f8e818]
+                - cell "20 / 700" [ref=f8e819]
+                - cell "10.4 s" [ref=f8e820]
+                - cell "28.1 s" [ref=f8e821]
+              - row [ref=f8e822]:
+                - rowheader "gpt-5.6-luna:floor" [ref=f8e823]
+                - cell "83 / 700 (11.9%)" [ref=f8e824]
+                - cell "82 / 700" [ref=f8e825]
+                - cell "9.2 s" [ref=f8e826]
+                - cell "38.9 s" [ref=f8e827]
+              - row [ref=f8e828]:
+                - rowheader "gemma-4-31b-it" [ref=f8e829]
+                - cell "21 / 700 (3.0%)" [ref=f8e830]
+                - cell "0 / 700" [ref=f8e831]
+                - cell "15.4 s" [ref=f8e832]
+                - cell "37.6 s" [ref=f8e833]
+              - row [ref=f8e834]:
+                - rowheader "gpt-6-luna" [ref=f8e835]
+                - cell "119 / 700 (17.0%)" [ref=f8e836]
+                - cell "119 / 700" [ref=f8e837]
+                - cell "6.3 s" [ref=f8e838]
+                - cell "24.4 s" [ref=f8e839]
+              - row [ref=f8e840]:
+                - rowheader "gemma-4-26b-a4b-it" [ref=f8e841]
+                - cell "89 / 700 (12.7%)" [ref=f8e842]
+                - cell "0 / 700" [ref=f8e843]
+                - cell "7.4 s" [ref=f8e844]
+                - cell "20.9 s" [ref=f8e845]
+              - row [ref=f8e846]:
+                - rowheader "glm-5.3 [reasoning-limited]" [ref=f8e847]
+                - cell "41 / 700 (5.9%)" [ref=f8e848]
+                - cell "39 / 700" [ref=f8e849]
+                - cell "5.2 s" [ref=f8e850]
+                - cell "25.0 s" [ref=f8e851]
+              - row [ref=f8e852]:
+                - rowheader "solar-pro4" [ref=f8e853]
+                - cell "23 / 700 (3.3%)" [ref=f8e854]
+                - cell "0 / 700" [ref=f8e855]
+                - cell "7.2 s" [ref=f8e856]
+                - cell "28.4 s" [ref=f8e857]
+              - row [ref=f8e858]:
+                - rowheader "solar-mini4-preview" [ref=f8e859]
+                - cell "173 / 700 (24.7%)" [ref=f8e860]
+                - cell "0 / 700" [ref=f8e861]
+                - cell "3.3 s" [ref=f8e862]
+                - cell "12.4 s" [ref=f8e863]
+              - row [ref=f8e864]:
+                - rowheader "motif-3" [ref=f8e865]
+                - cell "209 / 700 (29.9%)" [ref=f8e866]
+                - cell "3 / 700" [ref=f8e867]
+                - cell "29.0 s" [ref=f8e868]
+                - cell "72.8 s" [ref=f8e869]
+              - row [ref=f8e870]:
+                - rowheader "solar-mini4" [ref=f8e871]
+                - cell "115 / 700 (16.4%)" [ref=f8e872]
+                - cell "0 / 700" [ref=f8e873]
+                - cell "4.5 s" [ref=f8e874]
+                - cell "15.4 s" [ref=f8e875]
+              - row [ref=f8e876]:
+                - rowheader "deepseek-v4-pro-0813 [reasoning-disabled]" [ref=f8e877]
+                - cell "2 / 700 (0.3%)" [ref=f8e878]
+                - cell "0 / 700" [ref=f8e879]
+                - cell "7.0 s" [ref=f8e880]
+                - cell "15.4 s" [ref=f8e881]
+              - row [ref=f8e882]:
+                - rowheader "gemma-4-26B-A4B-it-qat-GGUF [reasoning-disabled]" [ref=f8e883]
+                - cell "103 / 700 (14.7%)" [ref=f8e884]
+                - cell "0 / 700" [ref=f8e885]
+                - cell "77.0 s" [ref=f8e886]
+                - cell "200.0 s" [ref=f8e887]
+              - row [ref=f8e888]:
+                - rowheader "gpt-5.6-luna:floor [reasoning-disabled]" [ref=f8e889]
+                - cell "0 / 700 (0.0%)" [ref=f8e890]
+                - cell "0 / 700" [ref=f8e891]
+                - cell "1.9 s" [ref=f8e892]
+                - cell "5.3 s" [ref=f8e893]
+  - contentinfo [ref=f8e894]:
+    - paragraph [ref=f8e896]: KoBALT-700 benchmark record. Data generated 26 Sep 2026 (UTC) from run directories via site/build.py.

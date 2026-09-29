@@ -25,10 +25,62 @@ def _group_stats(records: list[dict[str, Any]], key: str) -> dict[str, dict[str,
     return groups
 
 
+def _usage_summary(records: list[dict[str, Any]]) -> dict[str, Any] | None:
+    """Aggregate per-record usage; None when no record carries usage.
+
+    Records without usage (error records, older prediction files) are
+    ignored entirely, so a partially-instrumented run still reports honest
+    totals for the records that do have them.
+    """
+    usages = [r.get("usage") for r in records if isinstance(r.get("usage"), dict)]
+    if not usages:
+        return None
+
+    def _total(key: str) -> int | None:
+        vals = [
+            u[key]
+            for u in usages
+            if isinstance(u.get(key), int) and not isinstance(u.get(key), bool)
+        ]
+        return sum(vals) if vals else None
+
+    costs = [
+        u["cost"]
+        for u in usages
+        if isinstance(u.get("cost"), (int, float)) and not isinstance(u.get("cost"), bool)
+    ]
+    sources = {
+        u.get("cost_source")
+        for u in usages
+        if isinstance(u.get("cost"), (int, float))
+    }
+    if not costs:
+        cost_source = None
+    elif sources == {"provider"}:
+        cost_source = "provider"
+    else:
+        cost_source = "mixed"
+    return {
+        "records_with_usage": len(usages),
+        "prompt_tokens": _total("prompt_tokens"),
+        "completion_tokens": _total("completion_tokens"),
+        "reasoning_tokens": _total("reasoning_tokens"),
+        "total_cost": sum(costs) if costs else None,
+        "cost_source": cost_source,
+    }
+
+
 def compute_metrics(records: list[dict[str, Any]]) -> dict[str, Any]:
     """Compute accuracy aggregates over prediction records."""
     n = len(records)
     n_correct = sum(1 for r in records if r.get("correct") is True)
+    usage = _usage_summary(records)
+    total_cost = usage.get("total_cost") if usage else None
+    cost_per_correct = (
+        total_cost / n_correct
+        if isinstance(total_cost, (int, float)) and n_correct
+        else None
+    )
     return {
         "num_items": n,
         "num_correct": n_correct,
@@ -36,6 +88,8 @@ def compute_metrics(records: list[dict[str, Any]]) -> dict[str, Any]:
         "by_class": _group_stats(records, "class"),
         "by_subclass": _group_stats(records, "subclass"),
         "by_level": _group_stats(records, "level"),
+        "usage": usage,
+        "cost_per_correct": cost_per_correct,
     }
 
 

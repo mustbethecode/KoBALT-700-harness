@@ -8,7 +8,7 @@ import pytest
 
 from helpers import STUB_OUTPUT_CORRECT_H, make_items, write_run_config
 from kobalt_eval import cli
-from kobalt_eval.backends.base import AuthenticationFailed, Backend
+from kobalt_eval.backends.base import AuthenticationFailed, Backend, GenerationResult
 from kobalt_eval.config import default_run_config
 from kobalt_eval.runner import run_eval
 
@@ -34,7 +34,7 @@ class FailAfterFirstBackend(Backend):
         for _ in messages_list:
             self.calls += 1
             if self.calls == 1:
-                out.append(STUB_OUTPUT_CORRECT_H)
+                out.append(GenerationResult(text=STUB_OUTPUT_CORRECT_H))
             else:
                 raise AuthenticationFailed(
                     "401 from the test endpoint — the API key from env var TEST_KEY "

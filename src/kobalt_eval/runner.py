@@ -137,14 +137,14 @@ def run_eval(
     def infer(item: dict[str, Any]) -> dict[str, Any]:
         messages = build_messages_from_config(item["question"], config)
         t0 = time.perf_counter()
-        raw = backend.generate([messages], config)[0]
+        result = backend.generate([messages], config)[0]
         latency_ms = int((time.perf_counter() - t0) * 1000)
-        predicted = extract_answer(raw, config.extraction.regex)
+        predicted = extract_answer(result.text, config.extraction.regex)
         return {
             "id": item["id"],
             "model": config.backend.model,
             "backend": family,
-            "raw_output": raw,
+            "raw_output": result.text,
             "predicted_answer": predicted,
             "ground_truth": item["ground_truth"],
             "correct": predicted is not None and predicted == item["ground_truth"],
@@ -152,6 +152,7 @@ def run_eval(
             "subclass": item["subclass"],
             "level": item["level"],
             "latency_ms": latency_ms,
+            "usage": result.usage,
         }
 
     todo = [it for it in items if str(it["id"]) not in existing]
@@ -198,6 +199,7 @@ def run_eval(
                             "subclass": item["subclass"],
                             "level": item["level"],
                             "latency_ms": 0,
+                            "usage": None,
                             "error": str(e),
                         }
                     emit(rec)
